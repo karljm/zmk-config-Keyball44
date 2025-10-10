@@ -68,7 +68,7 @@
 &kp ESCAPE      &kp B     &kp L         &kp D        &kp W      &kp Z                 &kp Y            &kp F  &kp O      &kp U    &kp J      &kp BACKSPACE
 &kp LCTRL       &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I   &kp SQT
 &kp LEFT_SHIFT  &kp M     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp COMMA  &kp DOT  &kp SLASH  &kp RIGHT_SHIFT
-&kp LGUI        &kp LALT  &lt FUN ESCAPE  &lt MOUSE SPACE  &lt SCROLL TAB             &kp ENTER  &lt SYM BACKSPACE                                        &to 5
+&kp LGUI        &kp LALT  &lt FUN ESCAPE  &lt MOUSE SPACE  &lt SCROLL TAB             &kp ENTER  &lt SYM BACKSPACE                                        &to MOUSE
             >;
         };
 
@@ -108,7 +108,7 @@
 &none   &kp N1          &kp N2          &kp N3        &kp N4     &kp N5              &kp N6         &kp N7     &kp N8  &kp N9     &kp N0     &to 0
 &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none               &kp PAGE_UP    &mkp LCLK  &mo SCROLL   &mkp RCLK  &mkp MCLK  &none
 &none   &none           &none           &none         &none      &none               &kp PAGE_DOWN  &mkp MB4   &none   &mkp MB5      &none      &none
-&trans  &trans          &trans          &trans        &trans                 &trans  &trans                                                  &none
+&trans  &trans          &trans          &trans        &trans                 &trans  &trans                                                  &to MOUSE
             >;
         };
 
