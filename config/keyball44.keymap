@@ -65,7 +65,7 @@
         default_layer {
             label = "QWRT";
             bindings = <
-&kp ESCAPE      &kp B     &kp L         &kp D        &kp W      &kp Z                 &kp Y            &kp F  &kp O      &kp U    &kp J      &kp BACKSPACE
+&kp ESCAPE      &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &kp BACKSPACE
 &kp LCTRL       &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I   &kp SQT
 &kp LEFT_SHIFT  &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp COMMA  &kp DOT  &kp SLASH  &kp RIGHT_SHIFT
 &kp LGUI        &kp LALT  &lt FUN ESCAPE  &lt MOUSE SPACE  &lt SCROLL TAB             &kp ENTER  &lt SYM BACKSPACE                                        &to MOUSE
