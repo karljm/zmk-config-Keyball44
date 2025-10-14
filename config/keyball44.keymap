@@ -5,6 +5,7 @@
 #define MOUSE   4
 #define SCROLL  5
 #define SNIPE   6
+#define SETTING 7
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -56,6 +57,12 @@
             timeout-ms = <50>;
             key-positions = <19 20 21>;
             bindings = <&to 0>;
+        };
+
+        combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <38 39>;
+            bindings = <&kp LGUI>;
         };
     };
 
@@ -127,6 +134,16 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans              &trans  &trans                                  &trans
+            >;
+        };
+        
+        setting_layer {
+            label = "SETTING";
+            bindings = <
+&trans  &trans          &trans        &trans        &trans        &trans              &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans              &trans  &trans                                  &trans
             >;
