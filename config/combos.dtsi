@@ -11,7 +11,13 @@
             timeout-ms = <50>;
             key-positions = <26 27>;
             bindings = <&kp LGUI>;
-        };
+        }
+
+        combo_lsft {
+            timeout-ms = <50>;
+            key-positions = <14 16>;
+            bindings = <&kp LEFT_SHIFT>;
+        };;
 
         combo_lctl {
             timeout-ms = <50>;
@@ -19,10 +25,10 @@
             bindings = <&kp LCTRL>;
         };
 
-        combo_lsft {
+        combo_lalt {
             timeout-ms = <50>;
             key-positions = <26 28>;
-            bindings = <&kp LEFT_SHIFT>;
+            bindings = <&kp LALT>;
         };
 
         combo_lboot {
@@ -36,6 +42,12 @@
             key-positions = <30 31 32 33 34>;
             bindings = <&bootloader>;
         };
+        
+        combo_setting {
+            timeout-ms = <50>;
+            key-positions = <42 43>;
+            bindings = <&mo SETTING>;   
+        }
 
             
     };
