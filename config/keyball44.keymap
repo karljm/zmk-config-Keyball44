@@ -13,6 +13,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <config/combos.dtsi>
 
 &lt {
     tapping-term-ms = <240>;
@@ -50,22 +51,7 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
-
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <19 20 21>;
-            bindings = <&to 0>;
-        };
-
-        combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <38 39>;
-            bindings = <&kp LGUI>;
-        };
-    };
-
+    
     keymap {
         compatible = "zmk,keymap";
 
