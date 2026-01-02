@@ -1,2 +1,4 @@
 
 .zmk/
+totem_qmk/
+.DS_Store

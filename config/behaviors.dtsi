@@ -1,0 +1,25 @@
+/ {
+    behaviors {
+        // Mod-morphs
+        cmqus: comma_question {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_QUESTION";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dtsmi: dot_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_SEMI";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
+
+// Caps word configuration
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
