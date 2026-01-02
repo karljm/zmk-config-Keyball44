@@ -107,5 +107,37 @@
             key-positions = <39 5>;
             bindings = <&kp AT>;
         };
+
+        // Home row: ~   "   {   (   )   }
+        combo_tilde {
+            timeout-ms = <50>;
+            key-positions = <39 12>;
+            bindings = <&kp TILDE>;
+        };
+        combo_dqt {
+            timeout-ms = <50>;
+            key-positions = <39 13>;
+            bindings = <&kp DQT>;
+        };
+        combo_lbrc {
+            timeout-ms = <50>;
+            key-positions = <39 14>;
+            bindings = <&kp LBRC>;
+        };
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <39 15>;
+            bindings = <&kp LPAR>;
+        };
+        combo_rpar {
+            timeout-ms = <50>;
+            key-positions = <39 16>;
+            bindings = <&kp RPAR>;
+        };
+        combo_rbrc {
+            timeout-ms = <50>;
+            key-positions = <39 17>;
+            bindings = <&kp RBRC>;
+        };
     };
 };
