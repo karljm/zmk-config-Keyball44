@@ -15,7 +15,7 @@
 
         combo_lsft {
             timeout-ms = <50>;
-            key-positions = <14 16>;
+            key-positions = <14 15>;
             bindings = <&kp LEFT_SHIFT>;
         };
 
@@ -57,7 +57,7 @@
 
         combo_rsft {
             timeout-ms = <50>;
-            key-positions = <19 21>;
+            key-positions = <20 21>;
             bindings = <&kp RIGHT_SHIFT>;
         };
 
