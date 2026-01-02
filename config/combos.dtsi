@@ -139,5 +139,37 @@
             key-positions = <39 17>;
             bindings = <&kp RBRC>;
         };
+
+        // Bottom row: ;   '   <   [   ]   >
+        combo_semi {
+            timeout-ms = <50>;
+            key-positions = <39 24>;
+            bindings = <&kp SEMI>;
+        };
+        combo_sqt {
+            timeout-ms = <50>;
+            key-positions = <39 25>;
+            bindings = <&kp SQT>;
+        };
+        combo_lt {
+            timeout-ms = <50>;
+            key-positions = <39 26>;
+            bindings = <&kp LT>;
+        };
+        combo_lbkt {
+            timeout-ms = <50>;
+            key-positions = <39 27>;
+            bindings = <&kp LBKT>;
+        };
+        combo_rbkt {
+            timeout-ms = <50>;
+            key-positions = <39 28>;
+            bindings = <&kp RBKT>;
+        };
+        combo_gt {
+            timeout-ms = <50>;
+            key-positions = <39 29>;
+            bindings = <&kp GT>;
+        };
     };
 };
