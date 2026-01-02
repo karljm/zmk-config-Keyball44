@@ -171,5 +171,88 @@
             key-positions = <39 29>;
             bindings = <&kp GT>;
         };
+        // ==========================================
+        // RIGHT SYMBOLS (right thumb 42 + right keys)
+        // ==========================================
+        // Top row: ^   #   *   $   BSLH
+        combo_caret {
+            timeout-ms = <50>;
+            key-positions = <42 7>;
+            bindings = <&kp CARET>;
+        };
+        combo_hash {
+            timeout-ms = <50>;
+            key-positions = <42 8>;
+            bindings = <&kp HASH>;
+        };
+        combo_astrk {
+            timeout-ms = <50>;
+            key-positions = <42 9>;
+            bindings = <&kp ASTRK>;
+        };
+        combo_dllr {
+            timeout-ms = <50>;
+            key-positions = <42 10>;
+            bindings = <&kp DLLR>;
+        };
+        combo_bslh {
+            timeout-ms = <50>;
+            key-positions = <42 11>;
+            bindings = <&kp BSLH>;
+        };
+
+        // Home row: _   =   +   -   %
+        combo_under {
+            timeout-ms = <50>;
+            key-positions = <42 19>;
+            bindings = <&kp UNDER>;
+        };
+        combo_equal {
+            timeout-ms = <50>;
+            key-positions = <42 20>;
+            bindings = <&kp EQUAL>;
+        };
+        combo_plus {
+            timeout-ms = <50>;
+            key-positions = <42 21>;
+            bindings = <&kp PLUS>;
+        };
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <42 22>;
+            bindings = <&kp MINUS>;
+        };
+        combo_prcnt {
+            timeout-ms = <50>;
+            key-positions = <42 23>;
+            bindings = <&kp PRCNT>;
+        };
+
+        // Bottom row: :   ;   /   ,   .
+        combo_colon {
+            timeout-ms = <50>;
+            key-positions = <42 31>;
+            bindings = <&kp COLON>;
+        };
+        combo_semi_r {
+            timeout-ms = <50>;
+            key-positions = <42 32>;
+            bindings = <&kp SEMI>;
+        };
+        combo_fslh {
+            timeout-ms = <50>;
+            key-positions = <42 33>;
+            bindings = <&kp FSLH>;
+        };
+        combo_comma {
+            timeout-ms = <50>;
+            key-positions = <42 34>;
+            bindings = <&kp COMMA>;
+        };
+        combo_dot {
+            timeout-ms = <50>;
+            key-positions = <42 35>;
+            bindings = <&kp DOT>;
+        };
     };
 };
