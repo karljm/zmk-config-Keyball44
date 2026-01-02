@@ -67,6 +67,18 @@
             bindings = <&kp RCTRL>;
         };
 
+        combo_ent {
+            timeout-ms = <50>;
+            key-positions = <19 21>;
+            bindings = <&kp ENTER>;
+        };
+
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
+            bindings = <&kp BACKSPACE>;
+        };
+
         combo_ralt {
             timeout-ms = <50>;
             key-positions = <31 33>;
