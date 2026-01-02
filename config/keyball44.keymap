@@ -37,8 +37,8 @@
             bindings = <
             &kp ESCAPE      &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &kp BACKSPACE
             &kp LCTRL       &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &kp SQT
-            &kp LEFT_SHIFT  &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp COMMA  &kp DOT  &kp SLASH  &kp RIGHT_SHIFT
-            &kp LGUI        &kp LALT  &lt FUN ESCAPE  &lt MOUSE SPACE  &lt SCROLL TAB             &kp ENTER  &lt SYM BACKSPACE                                        &to MOUSE
+            &kp LEFT_SHIFT  &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp FSLH   &kp COMMA &kp DOT    &kp RIGHT_SHIFT
+            &kp LGUI        &kp LALT  &lt FUN ESCAPE  &lt MOUSE SPACE  &lt SCROLL TAB             &kp ENTER  &lt SYM BACKSPACE                           &to MOUSE
             >;
         };
 
@@ -55,10 +55,10 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-            &none   &kp AMPERSAND  &kp PIPE  &kp HASH  &kp ASTERISK   &none                 &none  &kp EXCLAMATION  &kp QUESTION      &kp AT_SIGN        &none      &none
-            &none   &kp TILDE      &kp LBRC  &kp RBRC  &kp UNDERSCORE &none                 &none  &kp SEMICOLON    &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp GRAVE  &none
-            &none   &kp LT         &kp GT    &kp CARET &kp DOLLAR     &none                 &none  &kp KP_EQUAL     &trans            &trans             &none      &none
-            &trans  &trans         &trans    &trans    &trans                               &trans &trans                                                           &trans
+            &kp GRAVE  &kp PIPE   &kp AMPS  &kp QMARK  &kp EXCL   &kp AT                    &kp CARET  &kp HASH   &kp ASTRK  &kp DLLR   &kp BSLH   &none
+            &kp TILDE  &kp DQT    &kp LBRC  &kp LPAR   &kp RPAR   &kp RBRC                  &kp UNDER  &kp EQUAL  &kp PLUS   &kp MINUS  &kp PRCNT  &none
+            &kp SEMI   &kp SQT    &kp LT    &kp LBKT   &kp RBKT   &kp GT                    &kp COLON  &kp SEMI   &kp FSLH   &kp COMMA  &kp DOT    &none
+            &trans     &trans     &trans    &trans     &trans                               &trans     &trans                                     &trans
             >;
         };
 
