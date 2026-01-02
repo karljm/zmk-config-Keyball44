@@ -72,5 +72,40 @@
             key-positions = <31 33>;
             bindings = <&kp RALT>;
         };
+
+        // ==========================================
+        // LEFT SYMBOLS (left thumb 39 + left keys)
+        // ==========================================
+        // Top row: `   |   &   ?   !   @
+        combo_grave {
+            timeout-ms = <50>;
+            key-positions = <39 0>;
+            bindings = <&kp GRAVE>;
+        };
+        combo_pipe {
+            timeout-ms = <50>;
+            key-positions = <39 1>;
+            bindings = <&kp PIPE>;
+        };
+        combo_amps {
+            timeout-ms = <50>;
+            key-positions = <39 2>;
+            bindings = <&kp AMPS>;
+        };
+        combo_qmark {
+            timeout-ms = <50>;
+            key-positions = <39 3>;
+            bindings = <&kp QMARK>;
+        };
+        combo_excl {
+            timeout-ms = <50>;
+            key-positions = <39 4>;
+            bindings = <&kp EXCL>;
+        };
+        combo_at {
+            timeout-ms = <50>;
+            key-positions = <39 5>;
+            bindings = <&kp AT>;
+        };
     };
 };
