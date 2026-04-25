@@ -213,18 +213,6 @@
             bindings = <&kp LT>;
         };
 
-        //combo_lbkt {
-        //    timeout-ms = <50>;
-        //    key-positions = <39 27>;
-        //    bindings = <&kp LBKT>;
-        //};
-
-        //combo_rbkt {
-        //    timeout-ms = <50>;
-        //    key-positions = <39 28>;
-        //    bindings = <&kp RBKT>;
-        //};
-
         combo_gt {
             timeout-ms = <50>;
             key-positions = <39 29>;

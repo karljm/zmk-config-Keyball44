@@ -8,6 +8,8 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 
 - Added Totem-style GUI/Ctrl/Alt Tab switching macros and `SWITCH` layer.
 - Added switch combos for GUI/Ctrl/Alt next and previous tab switching.
+- Added `OPTIONS` layer on hold for positions 0 and 11 with bootloader, reset, external power, and Bluetooth controls.
+- Bound GUI next directly to position 37 and Ctrl next directly to position 24.
 - Changed home-row modifier combos from held keypresses to sticky modifiers.
 - Updated bootloader combos:
   - Left: `26 + 27 + 28 + 29 + 40`.
@@ -16,6 +18,11 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 - Added mouse and scroll layer combos:
   - `39 + 28` -> `MOUSE`.
   - `39 + 27` -> `SCROLL`.
+- Added EDIT-layer mouse and scroll access:
+  - Hold `39`, then hold `28` -> `MOUSE`.
+  - Hold `39`, then hold `27` -> `SCROLL`.
+- Added direct `SYM` layer access on position 41.
+- Documented that bootloader combos affect the central half; use `SCROLL` layer `BOT` keys for source-specific bootloader access.
 - Disabled the left bracket symbol combos that conflicted with mouse/scroll combos.
 - Updated mouse layer arrow positions.
 - Updated `EDIT` layer to use `&none` fallthrough blockers and sticky Shift positions.

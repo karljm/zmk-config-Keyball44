@@ -23,12 +23,13 @@
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
 │ESC│ B │ L │ D │ W │ Z │               │   │ F │ O │ U │ J │BSP│
+│OPT│   │   │   │   │   │               │   │   │   │   │   │OPT│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
 │/NM│ N │ R │ T │ S │ G │               │ Y │ H │ A │ E │ I │'NM│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│SFT│ / │ X │ M │ C │ V │               │ K │ P │ . │ , │ ; │SFT│
+│CTN│ / │ X │ M │ C │ V │               │ K │ P │ . │ , │ ; │SFT│
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │GUI│ALT│   │ESC│SPC│TAB│       │   │EDT│   │   ●   │MOU│
+    │GUI│GUN│   │ESC│SPC│TAB│       │SYM│EDT│   │   ●   │MOU│
     │   │   │   │FUN│EDT│SCR│       │   │   │   │       │   │
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
@@ -37,21 +38,21 @@
 | Position | Key | Tap | Hold |
 |----------|-----|-----|------|
 | 36 | Left outer | GUI | - |
-| 37 | Left outer 2 | Alt | - |
+| 37 | Left outer 2 | GUI next | - |
 | 38 | Left middle | Escape | FUN layer |
 | 39 | Left inner | Space | EDIT layer |
 | 40 | Left inner 2 | Tab | SCROLL layer |
-| 41 | Right outer | - | - |
+| 41 | Right outer | - | SYM layer |
 | 42 | Right inner | - | EDIT layer |
 | 43 | Far right | - | TO MOUSE |
 
 **Outer Column Keys:**
 | Position | Key |
 |----------|-----|
-| Top left | Escape |
+| Top left | Escape / OPTIONS layer |
 | Home left | Slash / NUM layer |
-| Bottom left | Left Shift |
-| Top right | Backspace |
+| Bottom left | Ctrl next |
+| Top right | Backspace / OPTIONS layer |
 | Home right | Single Quote |
 | Bottom right | Right Shift |
 
@@ -113,7 +114,7 @@
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
 │   │   │ESC│   │   │ENT│               │   │BSP│DEL│   │   │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │   │   │TAB│   │               │   │   │   │   │   │   │
+│   │   │   │SCR│MOU│   │               │   │   │   │   │   │   │
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
     │   │   │   │   │   │   │       │   │   │   │   ●   │   │
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
@@ -125,7 +126,8 @@
 | 17 | Enter |
 | 19 | Backspace |
 | 20 | Delete |
-| 28 | Tab |
+| 27 | Scroll layer |
+| 28 | Mouse layer |
 
 ---
 
@@ -241,6 +243,31 @@
 
 ---
 
+### OPTIONS Layer (hold key 0 or key 11)
+
+```
+┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
+│BOT│   │   │   │   │   │               │   │   │   │   │   │BOT│
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│RST│CLR│BT0│BT1│BT2│   │               │   │   │   │   │   │RST│
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│EPO│   │   │   │   │   │               │   │   │   │   │   │EPN│
+└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
+    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
+    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
+```
+
+| Key | Description |
+|-----|-------------|
+| BOT | Bootloader |
+| RST | System Reset |
+| EPO | External Power Off |
+| EPN | External Power On |
+| CLR | Clear Bluetooth bonds |
+| BT0-BT2 | Select Bluetooth profile |
+
+---
+
 ## COMBOS
 
 ### Key Position Reference
@@ -298,8 +325,10 @@
 | Combo | Keys | Positions | Output |
 |-------|------|-----------|--------|
 | Bootloader L | X + M + C + V + Tab | 26 + 27 + 28 + 29 + 40 | Bootloader |
-| Bootloader R | K + P + . + , + right outer thumb | 30 + 31 + 32 + 33 + 41 | Bootloader |
+| Bootloader R | K + P + . + , + right outer thumb | 30 + 31 + 32 + 33 + 41 | Bootloader on central half |
 | Setting Layer | Thumb keys | 42 + 43 | Momentary SETTING |
+
+**Bootloader note:** ZMK combo reset behaviors run on the central half of a split keyboard. For source-specific bootloader access, hold `SCROLL` and press a `BOT` key on the half you want to flash.
 
 ---
 
@@ -348,13 +377,14 @@ Enabled with configuration:
 |-------|---------------|
 | DEFAULT | Base layer / TO 0 |
 | NUM | Hold key 12 or key 23 |
-| SYM | No direct access |
+| SYM | Hold key 41 |
 | FUN | Hold left thumb middle (key 38) |
 | MOUSE | TO MOUSE |
 | SCROLL | Hold left thumb inner 2 (key 40) / From MOUSE layer |
 | SNIPE | No direct access |
 | SETTING | Combo: keys 42 + 43 |
 | EDIT | Hold key 39 or key 42 |
+| OPTIONS | Hold key 0 or key 11 |
 
 ---
 
@@ -383,16 +413,20 @@ Enabled with configuration:
 
 | Action | Location |
 |--------|----------|
+| GUI next | Left outer 2 |
+| Ctrl next | Left bottom outer |
 | Space | Left thumb inner (tap) |
 | Enter | R + S combo or EDIT layer position 17 |
 | Backspace | Top right or EDIT layer position 19 |
 | Escape | Left thumb middle tap, top left, or EDIT layer position 14 |
-| Tab | Left thumb inner 2 tap or EDIT layer position 28 |
+| Tab | Left thumb inner 2 tap |
 
 ### Layer Access
 
 | Layer | Hold Key |
 |-------|----------|
+| OPTIONS | Escape or Backspace |
+| SYM | Right outer thumb |
 | EDIT | Left thumb Space or right thumb inner |
 | FUN | Left thumb Escape |
 | SCROLL | Left thumb Tab |

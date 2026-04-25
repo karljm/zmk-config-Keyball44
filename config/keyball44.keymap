@@ -8,6 +8,7 @@
 #define SETTING 7
 #define EDIT    8
 #define SWITCH  9
+#define OPTIONS 10
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -37,10 +38,10 @@
         default_layer {
             label = "QWRT";
             bindings = <
-            &kp ESCAPE      &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &kp BACKSPACE
+            &lt OPTIONS ESCAPE &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &lt OPTIONS BACKSPACE
             &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &lt NUM SQT
-            &kp LEFT_SHIFT  &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
-            &kp LGUI        &kp LALT  &mo MOUSE  &lt EDIT SPACE  &mo SCROLL               &none      &mo EDIT                                    &to MOUSE
+            &sw_ctl_next    &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
+            &kp LGUI        &sw_gui_next  &mo MOUSE  &lt EDIT SPACE  &mo SCROLL            &mo SYM    &mo EDIT                                    &to MOUSE
             >;
         };
 
@@ -119,7 +120,7 @@
             bindings = <
             &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
             &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
-            &none  &none  &none      &none  &kp TAB &none                              &none  &none         &none      &none  &none  &none
+            &none  &none  &none      &mo SCROLL  &mo MOUSE &none                       &none  &none         &none      &none  &none  &none
             &none  &none  &none      &none  &none                                      &none  &none                                  &none
             >;
         };
@@ -131,6 +132,16 @@
             &kp ESCAPE  &none  &kp LS(TAB)  &kp TAB  &none  &none                       &none  &none  &none  &none  &none  &none
             &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
             &none  &none  &none        &none    &none                                  &none  &none                          &none
+            >;
+        };
+
+        options_layer {
+            label = "OPTIONS";
+            bindings = <
+            &bootloader       &none        &none        &none        &none        &none      &none  &none  &none  &none  &none  &bootloader
+            &sys_reset        &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &none  &none  &none  &none  &none  &sys_reset
+            &ext_power EP_OFF &none  &none      &none        &none        &none          &none  &none  &none  &none  &none  &ext_power EP_ON
+            &none             &none  &none      &none        &none                       &none  &none                          &none
             >;
         };
     };
