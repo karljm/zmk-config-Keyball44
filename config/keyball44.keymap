@@ -6,6 +6,7 @@
 #define SCROLL  5
 #define SNIPE   6
 #define SETTING 7
+#define EDIT    8
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -36,18 +37,18 @@
             label = "QWRT";
             bindings = <
             &kp ESCAPE      &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &kp BACKSPACE
-            &kp LCTRL       &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &kp SQT
-            &kp LEFT_SHIFT  &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp FSLH   &kp COMMA &kp DOT    &kp RIGHT_SHIFT
-            &kp LGUI        &kp LALT  &lt FUN ESCAPE  &lt MOUSE SPACE  &lt SCROLL TAB             &kp ENTER  &lt SYM BACKSPACE                           &to MOUSE
+            &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &lt NUM SQT
+            &kp LEFT_SHIFT  &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
+            &kp LGUI        &kp LALT  &mo MOUSE  &lt EDIT SPACE  &mo SCROLL               &none      &mo EDIT                                    &to MOUSE
             >;
         };
 
         number_layer {
             label = "NUM";
             bindings = <
-            &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5          &kp NUMBER_6   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
-            &none   &kp LEFT      &kp DOWN      &kp UP_ARROW  &kp RIGHT     &none                 &none          &none         &none         &none         &none         &none
-            &none   &none         &none         &none         &none         &none                 &none          &none         &trans        &trans        &none         &none
+            &trans  &none         &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none                &none          &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none         &trans
+            &trans  &kp NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none                &none          &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp NUMBER_0  &trans
+            &none   &none         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none                &none          &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none         &none
             &trans  &trans        &trans        &trans        &trans                              &trans         &trans                                                  &trans
             >;
         };
@@ -109,6 +110,16 @@
             &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans            &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans      &trans        &trans        &trans        &trans            &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans      &trans        &trans        &trans                          &trans  &trans                          &trans
+            >;
+        };
+
+        edit_layer {
+            label = "EDIT";
+            bindings = <
+            &trans  &trans  &trans      &trans  &trans  &trans                              &trans  &trans         &trans      &trans  &trans  &trans
+            &trans  &sk LSHIFT  &kp ESCAPE  &trans  &kp ENTER  &trans                           &trans  &kp BACKSPACE  &kp DELETE  &sk LSHIFT  &trans  &trans
+            &trans  &trans  &trans      &trans  &kp TAB &trans                              &trans  &trans         &trans      &trans  &trans  &trans
+            &trans  &trans  &trans      &trans  &trans                                      &trans  &trans                                  &trans
             >;
         };
     };

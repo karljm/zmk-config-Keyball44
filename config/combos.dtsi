@@ -9,26 +9,30 @@
 
         combo_lgui {
             timeout-ms = <50>;
-            key-positions = <26 27>;
+            key-positions = <39 14>;
             bindings = <&kp LGUI>;
+            slow-release;
         };
 
         combo_lsft {
             timeout-ms = <50>;
-            key-positions = <14 15>;
+            key-positions = <39 16>;
             bindings = <&kp LEFT_SHIFT>;
+            slow-release;
         };
 
         combo_lctl {
             timeout-ms = <50>;
-            key-positions = <27 28>;
+            key-positions = <39 13>;
             bindings = <&kp LCTRL>;
+            slow-release;
         };
 
         combo_lalt {
             timeout-ms = <50>;
-            key-positions = <26 28>;
+            key-positions = <39 15>;
             bindings = <&kp LALT>;
+            slow-release;
         };
 
         combo_lboot {
@@ -51,25 +55,28 @@
 
         combo_rgui {
             timeout-ms = <50>;
-            key-positions = <31 32>;
+            key-positions = <42 21>;
             bindings = <&kp RGUI>;
+            slow-release;
         };
 
         combo_rsft {
             timeout-ms = <50>;
-            key-positions = <20 21>;
+            key-positions = <42 19>;
             bindings = <&kp RIGHT_SHIFT>;
+            slow-release;
         };
 
         combo_rctl {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <42 22>;
             bindings = <&kp RCTRL>;
+            slow-release;
         };
 
         combo_ent {
             timeout-ms = <50>;
-            key-positions = <19 21>;
+            key-positions = <14 16>;
             bindings = <&kp ENTER>;
         };
 
@@ -81,8 +88,9 @@
 
         combo_ralt {
             timeout-ms = <50>;
-            key-positions = <31 33>;
+            key-positions = <42 20>;
             bindings = <&kp RALT>;
+            slow-release;
         };
 
         // ==========================================
@@ -120,31 +128,11 @@
             bindings = <&kp AT>;
         };
 
-        // Home row: ~   "   {   (   )   }
+        // Home row positions 13-16 are reserved for left-hand modifier combos.
         combo_tilde {
             timeout-ms = <50>;
             key-positions = <39 12>;
             bindings = <&kp TILDE>;
-        };
-        combo_dqt {
-            timeout-ms = <50>;
-            key-positions = <39 13>;
-            bindings = <&kp DQT>;
-        };
-        combo_lbrc {
-            timeout-ms = <50>;
-            key-positions = <39 14>;
-            bindings = <&kp LBRC>;
-        };
-        combo_lpar {
-            timeout-ms = <50>;
-            key-positions = <39 15>;
-            bindings = <&kp LPAR>;
-        };
-        combo_rpar {
-            timeout-ms = <50>;
-            key-positions = <39 16>;
-            bindings = <&kp RPAR>;
         };
         combo_rbrc {
             timeout-ms = <50>;
@@ -213,27 +201,7 @@
             bindings = <&kp BSLH>;
         };
 
-        // Home row: _   =   +   -   %
-        combo_under {
-            timeout-ms = <50>;
-            key-positions = <42 19>;
-            bindings = <&kp UNDER>;
-        };
-        combo_equal {
-            timeout-ms = <50>;
-            key-positions = <42 20>;
-            bindings = <&kp EQUAL>;
-        };
-        combo_plus {
-            timeout-ms = <50>;
-            key-positions = <42 21>;
-            bindings = <&kp PLUS>;
-        };
-        combo_minus {
-            timeout-ms = <50>;
-            key-positions = <42 22>;
-            bindings = <&kp MINUS>;
-        };
+        // Home row positions 19-22 are reserved for right-hand modifier combos.
         combo_prcnt {
             timeout-ms = <50>;
             key-positions = <42 23>;

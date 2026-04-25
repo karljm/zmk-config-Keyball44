@@ -24,12 +24,12 @@
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
 │ESC│ B │ L │ D │ W │ Z │               │   │ F │ O │ U │ J │BSP│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│CTL│ N │ R │ T │ S │ G │               │ Y │ H │ A │ E │ I │ ' │
+│/NM│ N │ R │ T │ S │ G │               │ Y │ H │ A │ E │ I │'NM│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│SFT│ Q │ X │ M │ C │ V │               │ K │ P │ , │ . │ / │SFT│
+│SFT│ / │ X │ M │ C │ V │               │ K │ P │ . │ , │ ; │SFT│
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │GUI│ALT│   │ESC│SPC│TAB│       │ENT│BSP│   │   ●   │MOU│
-    │   │   │   │FUN│MOU│SCR│       │   │SYM│   │       │   │
+    │GUI│ALT│   │ESC│SPC│TAB│       │   │EDT│   │   ●   │MOU│
+    │   │   │   │FUN│EDT│SCR│       │   │   │   │       │   │
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
@@ -39,17 +39,17 @@
 | 36 | Left outer | GUI | - |
 | 37 | Left outer 2 | Alt | - |
 | 38 | Left middle | Escape | FUN layer |
-| 39 | Left inner | Space | MOUSE layer |
+| 39 | Left inner | Space | EDIT layer |
 | 40 | Left inner 2 | Tab | SCROLL layer |
-| 41 | Right outer | Enter | - |
-| 42 | Right inner | Backspace | SYM layer |
+| 41 | Right outer | - | - |
+| 42 | Right inner | - | EDIT layer |
 | 43 | Far right | - | TO MOUSE |
 
 **Outer Column Keys:**
 | Position | Key |
 |----------|-----|
 | Top left | Escape |
-| Home left | Left Ctrl |
+| Home left | Slash / NUM layer |
 | Bottom left | Left Shift |
 | Top right | Backspace |
 | Home right | Single Quote |
@@ -63,19 +63,21 @@
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
 │   │ 1 │ 2 │ 3 │ 4 │ 5 │               │ 6 │ 7 │ 8 │ 9 │ 0 │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │ ← │ ↓ │ ↑ │ → │   │               │   │   │   │   │   │   │
+│   │   │ 7 │ 8 │ 9 │   │               │   │ 9 │ 8 │ 7 │   │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │   │   │   │   │               │   │   │   │   │   │   │
+│   │ 0 │ 1 │ 2 │ 3 │   │               │   │ 3 │ 2 │ 1 │ 0 │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│   │   │ 4 │ 5 │ 6 │   │               │   │ 6 │ 5 │ 4 │   │   │
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
     │   │   │   │   │   │   │       │   │   │   │   ●   │   │
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-**Note:** Currently no thumb access to NUM layer. Arrow keys on left home row.
+**Access:** Hold position 12 or position 23.
 
 ---
 
-### SYM Layer (hold right thumb inner)
+### SYM Layer
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
@@ -93,17 +95,37 @@
 
 | Left Hand | | | | |
 |-----------|---|---|---|---|
-| & | \| | # | * | |
-| ~ | { | } | _ | |
-| < | > | ^ | $ | |
+| ` | \| | & | ? | ! |
+| ~ | " | { | ( | ) |
+| ' | < | [ | ] | > |
 
 | Right Hand | | | | |
 |------------|---|---|---|---|
-| ! | ? | @ | | |
-| ; | [ | ] | ` | |
-| = | | | | |
+| @ | ^ | # | * | $ |
+| } | _ | = | + | - |
+| : | ; | / | , | . |
 
-**Missing Symbols:** `( ) + - \ : " %`
+### EDIT Layer (hold key 39 or key 42)
+
+```
+┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
+│   │   │   │   │   │   │               │   │   │   │   │   │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│   │   │ESC│   │   │ENT│               │   │BSP│DEL│   │   │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│   │   │   │   │TAB│   │               │   │   │   │   │   │   │
+└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
+    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
+    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
+```
+
+| Position | Output |
+|----------|--------|
+| 14 | Escape |
+| 17 | Enter |
+| 19 | Backspace |
+| 20 | Delete |
+| 28 | Tab |
 
 ---
 
@@ -239,24 +261,25 @@
 
 | Combo | Keys | Positions | Output |
 |-------|------|-----------|--------|
-| Left GUI | X + M | 26 + 27 | Left GUI |
-| Left Shift | R + S | 14 + 16 | Left Shift |
-| Left Ctrl | M + C | 27 + 28 | Left Ctrl |
-| Left Alt | X + C | 26 + 28 | Left Alt |
+| Left Ctrl | TH2 + N | 39 + 13 | Left Ctrl |
+| Left GUI | TH2 + R | 39 + 14 | Left GUI |
+| Left Alt | TH2 + T | 39 + 15 | Left Alt |
+| Left Shift | TH2 + S | 39 + 16 | Left Shift |
 
 ### Modifier Combos (Right Hand)
 
 | Combo | Keys | Positions | Output |
 |-------|------|-----------|--------|
-| Right GUI | P + , | 31 + 32 | Right GUI |
-| Right Shift | H + E | 19 + 21 | Right Shift |
-| Right Ctrl | , + . | 32 + 33 | Right Ctrl |
-| Right Alt | P + . | 31 + 33 | Right Alt |
+| Right Shift | TH5 + H | 42 + 19 | Right Shift |
+| Right Alt | TH5 + A | 42 + 20 | Right Alt |
+| Right GUI | TH5 + E | 42 + 21 | Right GUI |
+| Right Ctrl | TH5 + I | 42 + 22 | Right Ctrl |
 
 ### Navigation Combos
 
 | Combo | Keys | Positions | Output |
 |-------|------|-----------|--------|
+| Enter | R + S | 14 + 16 | Enter |
 | To Default | H + A + E | 19 + 20 + 21 | TO layer 0 |
 
 ### System Combos
@@ -313,13 +336,14 @@ Enabled with configuration:
 | Layer | Access Method |
 |-------|---------------|
 | DEFAULT | Base layer / TO 0 |
-| NUM | No direct access |
-| SYM | Hold right thumb inner (key 42) |
+| NUM | Hold key 12 or key 23 |
+| SYM | No direct access |
 | FUN | Hold left thumb middle (key 38) |
-| MOUSE | Hold left thumb inner (key 39) / TO MOUSE |
+| MOUSE | TO MOUSE |
 | SCROLL | Hold left thumb inner 2 (key 40) / From MOUSE layer |
 | SNIPE | No direct access |
 | SETTING | Combo: keys 42 + 43 |
+| EDIT | Hold key 39 or key 42 |
 
 ---
 
@@ -327,28 +351,18 @@ Enabled with configuration:
 
 ### Missing Features
 
-- [ ] No NUM layer access on thumbs
 - [ ] No repeat key
 - [ ] No caps word key assigned
-- [ ] Parentheses `( )` missing from SYM layer
-- [ ] Plus `+` and minus `-` missing from SYM layer
-- [ ] Backslash `\` missing from SYM layer
-- [ ] Colon `:` missing from SYM layer
-- [ ] Double quote `"` missing from SYM layer
-- [ ] Percent `%` missing from SYM layer
 - [ ] SNIPE layer is empty
-- [ ] Enter has no hold function (wasted potential)
 - [ ] Mod-morph behaviors defined but not used
 
 ### Potential Improvements
 
 1. Add `&key_repeat` to a thumb key
 2. Add `&caps_word` access
-3. Add NUM layer to a thumb hold
-4. Complete the SYM layer with missing symbols
-5. Add one-shot modifiers (`&sk`) to combos
-6. Populate SNIPE layer for precision trackball
-7. Add navigation combos (word jump, home/end)
+3. Add one-shot modifiers (`&sk`) to combos
+4. Populate SNIPE layer for precision trackball
+5. Add navigation combos (word jump, home/end)
 
 ---
 
@@ -359,25 +373,24 @@ Enabled with configuration:
 | Action | Location |
 |--------|----------|
 | Space | Left thumb inner (tap) |
-| Enter | Right thumb outer |
-| Backspace | Right thumb inner (tap) or top right |
-| Escape | Left thumb middle (tap) or top left |
-| Tab | Left thumb inner 2 (tap) |
+| Enter | R + S combo or EDIT layer position 17 |
+| Backspace | Top right or EDIT layer position 19 |
+| Escape | Left thumb middle tap, top left, or EDIT layer position 14 |
+| Tab | Left thumb inner 2 tap or EDIT layer position 28 |
 
 ### Layer Access
 
 | Layer | Hold Key |
 |-------|----------|
-| SYM | Right thumb Backspace |
+| EDIT | Left thumb Space or right thumb inner |
 | FUN | Left thumb Escape |
-| MOUSE | Left thumb Space |
 | SCROLL | Left thumb Tab |
 
 ### Quick Modifiers (Combos)
 
 | Modifier | Left Hand | Right Hand |
 |----------|-----------|------------|
-| Shift | R + S | H + E |
-| Ctrl | M + C | , + . |
-| Alt | X + C | P + . |
-| GUI | X + M | P + , |
+| Shift | TH2 + S | TH5 + H |
+| Ctrl | TH2 + N | TH5 + I |
+| Alt | TH2 + T | TH5 + A |
+| GUI | TH2 + R | TH5 + E |
