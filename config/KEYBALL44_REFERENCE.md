@@ -282,12 +282,23 @@
 | Enter | R + S | 14 + 16 | Enter |
 | To Default | H + A + E | 19 + 20 + 21 | TO layer 0 |
 
+### Switch Combos
+
+| Combo | Keys | Positions | Output |
+|-------|------|-----------|--------|
+| GUI next | TH2 + N + S | 39 + 13 + 16 | GUI held, Tab tapped, SWITCH layer held |
+| GUI previous | TH2 + N + T | 39 + 13 + 15 | GUI held, Shift+Tab tapped, SWITCH layer held |
+| Ctrl next | TH2 + R + S | 39 + 14 + 16 | Ctrl held, Tab tapped, SWITCH layer held |
+| Ctrl previous | TH2 + R + T | 39 + 14 + 15 | Ctrl held, Shift+Tab tapped, SWITCH layer held |
+| Alt next | TH2 + / + S | 39 + 12 + 16 | Alt held, Tab tapped, SWITCH layer held |
+| Alt previous | TH2 + / + T | 39 + 12 + 15 | Alt held, Shift+Tab tapped, SWITCH layer held |
+
 ### System Combos
 
 | Combo | Keys | Positions | Output |
 |-------|------|-----------|--------|
-| Bootloader L | Q + X + M + C + V | 25 + 26 + 27 + 28 + 29 | Bootloader |
-| Bootloader R | K + P + , + . + / | 30 + 31 + 32 + 33 + 34 | Bootloader |
+| Bootloader L | X + M + C + V + Tab | 26 + 27 + 28 + 29 + 40 | Bootloader |
+| Bootloader R | K + P + . + , + right outer thumb | 30 + 31 + 32 + 33 + 41 | Bootloader |
 | Setting Layer | Thumb keys | 42 + 43 | Momentary SETTING |
 
 ---
