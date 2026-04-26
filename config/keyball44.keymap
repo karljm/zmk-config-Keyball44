@@ -32,6 +32,20 @@
 };
 
 / {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        mouse_requires_edit {
+            if-layers = <EDIT MOUSE>;
+            then-layer = <MOUSE>;
+        };
+
+        scroll_requires_edit {
+            if-layers = <EDIT SCROLL>;
+            then-layer = <SCROLL>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -41,7 +55,7 @@
             &lt OPTIONS ESCAPE &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &lt OPTIONS BACKSPACE
             &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &lt NUM SQT
             &sw_ctl_next    &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
-            &kp LGUI        &sw_gui_next  &mo MOUSE  &lt EDIT SPACE  &mo SCROLL            &mo SYM    &mo EDIT                                    &to MOUSE
+            &sw_alt_next        &sw_gui_next  &mo MOUSE  &lt EDIT SPACE  &mo SCROLL            &mo SYM    &mo EDIT                                    &to MOUSE
             >;
         };
 
@@ -49,7 +63,7 @@
             label = "NUM";
             bindings = <
             &trans  &none         &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none                &none          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &trans
-            &trans  &kp NUMBER_0  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &none                &none          &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp NUMBER_0  &trans
+            &trans  &kp NUMBER_0  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp NUMBER_0         &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &trans
             &none   &none         &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none                &none          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none         &none
             &trans  &trans        &trans        &trans        &trans                              &trans         &trans                                                  &trans
             >;
@@ -119,9 +133,9 @@
             label = "EDIT";
             bindings = <
             &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
-            &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
-            &none  &none  &none      &mo SCROLL  &mo MOUSE &none                       &none  &none         &none      &none  &none  &none
-            &none  &none  &none      &none  &none                                      &none  &none                                  &none
+            &none  &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER                    &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
+            &none  &none  &none      &tog SCROLL  &tog MOUSE &none                     &none  &none         &none      &none  &none  &none
+            &none  &none  &none       &kp ESCAPE  &none                                      &none  &none                                  &none
             >;
         };
 

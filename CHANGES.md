@@ -36,4 +36,8 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 - Added `R + S` combo for Enter.
 - Added `EDIT` layer, activated by holding position 39 or 42.
 - Moved Enter, Escape, Tab, Backspace, and Delete access onto the `EDIT` layer.
+- Added conditional `EDIT` -> `SCROLL`/`MOUSE` sublayers so tapping positions 27 or 28 in `EDIT` latches those layers only while `EDIT` remains held.
+- Added alt next key
+- Swapped orientation of nums for right hand
+- Removed backspace combo
 - Removed symbol combos that overlapped with the new modifier combos.
