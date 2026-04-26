@@ -1,8 +1,0 @@
-# Copyright (c) 2026
-# SPDX-License-Identifier: MIT
-
-description: Child layer latch while edit parent is held
-
-compatible: "zmk,behavior-edit-child-layer"
-
-include: one_param.yaml

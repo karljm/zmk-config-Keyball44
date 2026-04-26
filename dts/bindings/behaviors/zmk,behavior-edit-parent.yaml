@@ -1,8 +1,0 @@
-# Copyright (c) 2026
-# SPDX-License-Identifier: MIT
-
-description: Parent-held edit layer behavior
-
-compatible: "zmk,behavior-edit-parent"
-
-include: one_param.yaml

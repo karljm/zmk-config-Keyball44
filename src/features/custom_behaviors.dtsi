@@ -1,4 +1,16 @@
 / {
+    macros {
+        edit_hold_cleanup: edit_hold_cleanup {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo EDIT>
+                , <&macro_release &tog_off SCROLL>
+                , <&macro_release &tog_off MOUSE>
+                ;
+        };
+    };
+
     behaviors {
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
@@ -10,16 +22,18 @@
             display-name = "Sticky Key Quick Release";
         };
 
-        edit_parent: edit_parent {
-            compatible = "zmk,behavior-edit-parent";
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
-            display-name = "Edit Parent";
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
         };
 
-        edit_child: edit_child {
-            compatible = "zmk,behavior-edit-child-layer";
+        tog_off: toggle_layer_off_only {
+            compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
-            display-name = "Edit Child";
+            display-name = "Toggle Layer Off";
+            toggle-mode = "off";
         };
 
         edit_lt: edit_layer_tap {
@@ -28,7 +42,7 @@
             flavor = "balanced";
             tapping-term-ms = <240>;
             quick-tap-ms = <150>;
-            bindings = <&edit_parent>, <&kp>;
+            bindings = <&edit_hold_cleanup>, <&kp>;
             display-name = "Edit Layer-Tap";
         };
 

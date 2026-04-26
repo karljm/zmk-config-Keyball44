@@ -7,9 +7,9 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 ### Commit: Refine Keyball layout, layers, and combos
 
 - Refactored the config into `src/definitions/` and `src/features/` so shared includes, layer IDs, and feature snippets follow the same structure as the reference repo.
-- Added a repo-local custom ZMK module, with `src/behaviors/custom_behaviors.c` as the shared home for bespoke behavior logic.
 - Shifted switcher layer keys to the right
-- Replaced the global conditional `EDIT` -> `SCROLL`/`MOUSE` rule with custom parent/child `EDIT` behaviors so the normal `MOUSE` and `SCROLL` access paths still work.
+- Removed the custom `EDIT` parent/child behavior flow and reverted `EDIT` access to stock ZMK `&lt` / `&mo` behavior.
+- Added a scoped stock-ZMK `EDIT` sublayer flow using explicit `tog_on`/`tog_off` behaviors and an `edit_hold_cleanup` macro so `SCROLL`/`MOUSE` reset when the `EDIT` hold ends.
 - Added Totem-style GUI/Ctrl/Alt Tab switching macros and `SWITCH` layer.
 - Added switch combos for GUI/Ctrl/Alt next and previous tab switching.
 - Added `OPTIONS` layer on hold for positions 0 and 11 with bootloader, reset, external power, and Bluetooth controls.
