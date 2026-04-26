@@ -10,28 +10,28 @@
         combo_lgui {
             timeout-ms = <50>;
             key-positions = <39 14>;
-            bindings = <&sk LGUI>;
+            bindings = <&skq LGUI>;
             slow-release;
         };
 
         combo_lsft {
             timeout-ms = <50>;
             key-positions = <39 16>;
-            bindings = <&sk LEFT_SHIFT>;
+            bindings = <&skq LEFT_SHIFT>;
             slow-release;
         };
 
         combo_lctl {
             timeout-ms = <50>;
             key-positions = <39 13>;
-            bindings = <&sk LCTRL>;
+            bindings = <&skq LCTRL>;
             slow-release;
         };
 
         combo_lalt {
             timeout-ms = <50>;
             key-positions = <39 15>;
-            bindings = <&sk LALT>;
+            bindings = <&skq LALT>;
             slow-release;
         };
 
@@ -56,21 +56,21 @@
         combo_rgui {
             timeout-ms = <50>;
             key-positions = <42 21>;
-            bindings = <&sk RGUI>;
+            bindings = <&skq RGUI>;
             slow-release;
         };
 
         combo_rsft {
             timeout-ms = <50>;
             key-positions = <42 19>;
-            bindings = <&sk RIGHT_SHIFT>;
+            bindings = <&skq RIGHT_SHIFT>;
             slow-release;
         };
 
         combo_rctl {
             timeout-ms = <50>;
             key-positions = <42 22>;
-            bindings = <&sk RCTRL>;
+            bindings = <&skq RCTRL>;
             slow-release;
         };
 
@@ -83,7 +83,7 @@
         combo_ralt {
             timeout-ms = <50>;
             key-positions = <42 20>;
-            bindings = <&sk RALT>;
+            bindings = <&skq RALT>;
             slow-release;
         };
 

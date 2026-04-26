@@ -1,5 +1,15 @@
 / {
     behaviors {
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
+            ignore-modifiers;
+            display-name = "Sticky Key Quick Release";
+        };
+
         edit_parent: edit_parent {
             compatible = "zmk,behavior-edit-parent";
             #binding-cells = <1>;
