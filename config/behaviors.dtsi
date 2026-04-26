@@ -1,2 +1,2 @@
-#include "../src/features/custom_behaviors.dtsi"
-#include "../src/features/switcher.dtsi"
+#include <src/features/custom_behaviors.dtsi>
+#include <src/features/switcher.dtsi>

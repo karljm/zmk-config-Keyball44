@@ -5,9 +5,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#include "config.dtsi"
+#include <src/definitions/config.dtsi>
 
-#include "../features/custom_behaviors.dtsi"
-#include "../features/switcher.dtsi"
+#include <src/features/custom_behaviors.dtsi>
+#include <src/features/switcher.dtsi>
 
-#include "../../config/combos.dtsi"
+#include <config/combos.dtsi>
