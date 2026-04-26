@@ -126,8 +126,8 @@
 | 17 | Enter |
 | 19 | Backspace |
 | 20 | Delete |
-| 27 | Toggle Scroll layer while `EDIT` is held |
-| 28 | Toggle Mouse layer while `EDIT` is held |
+| 27 | Latch Scroll layer while `EDIT` is held |
+| 28 | Latch Mouse layer while `EDIT` is held |
 
 ---
 

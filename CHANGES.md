@@ -6,6 +6,8 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 
 ### Commit: Refine Keyball layout, layers, and combos
 
+- Added a repo-local custom ZMK module, with `src/keyball_custom_behaviors.c` as the shared home for bespoke behavior logic.
+- Replaced the global conditional `EDIT` -> `SCROLL`/`MOUSE` rule with custom parent/child `EDIT` behaviors so the normal `MOUSE` and `SCROLL` access paths still work.
 - Added Totem-style GUI/Ctrl/Alt Tab switching macros and `SWITCH` layer.
 - Added switch combos for GUI/Ctrl/Alt next and previous tab switching.
 - Added `OPTIONS` layer on hold for positions 0 and 11 with bootloader, reset, external power, and Bluetooth controls.
@@ -36,7 +38,6 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 - Added `R + S` combo for Enter.
 - Added `EDIT` layer, activated by holding position 39 or 42.
 - Moved Enter, Escape, Tab, Backspace, and Delete access onto the `EDIT` layer.
-- Added conditional `EDIT` -> `SCROLL`/`MOUSE` sublayers so tapping positions 27 or 28 in `EDIT` latches those layers only while `EDIT` remains held.
 - Added alt next key
 - Swapped orientation of nums for right hand
 - Removed backspace combo
