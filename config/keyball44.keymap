@@ -149,7 +149,7 @@
         options_layer {
             label = "OPTIONS";
             bindings = <
-            &bootloader       &none        &none        &none        &none        &none      &none  &none  &none  &none  &none  &bootloader
+            &none       &none        &none        &none        &none        &bootloader      &bootloader  &none  &none  &none  &none  &none
             &sys_reset        &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &none  &none  &none  &none  &none  &sys_reset
             &ext_power EP_OFF &none  &none      &none        &none        &none          &none  &none  &none  &none  &none  &ext_power EP_ON
             &none             &none  &none      &none        &none                       &none  &none                          &none
