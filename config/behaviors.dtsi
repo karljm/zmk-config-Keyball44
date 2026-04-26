@@ -90,7 +90,7 @@
             bindings
                 = <&macro_press &mo EDIT>
                 , <&macro_pause_for_release>
-                , <&macro_tap &tog_off SNIPE &tog_off HSCROLL &tog_off SCROLL &tog_off MOUSE>
+                , <&macro_tap &tog_off BSCROLL &tog_off SNIPE &tog_off HSCROLL &tog_off SCROLL &tog_off MOUSE>
                 , <&macro_release &mo EDIT>
                 ;
         };
@@ -99,7 +99,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &tog_off SNIPE &tog_off HSCROLL &tog_off SCROLL &tog_off MOUSE &to DEFAULT>
+                = <&macro_tap &tog_off BSCROLL &tog_off SNIPE &tog_off HSCROLL &tog_off SCROLL &tog_off MOUSE &to DEFAULT>
                 ;
         };
 
@@ -128,6 +128,36 @@
             bindings
                 = <&macro_tap &tog_off SCROLL &tog_on HSCROLL>
                 ;
+        };
+
+        both_scroll_hold: both_scroll_hold {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo BSCROLL>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo BSCROLL>
+                ;
+        };
+
+        scroll_vertical_or_both: scroll_vertical_or_both {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <240>;
+            quick-tap-ms = <150>;
+            bindings = <&both_scroll_hold>, <&scroll_vertical>;
+            display-name = "Vertical/Both Scroll";
+        };
+
+        scroll_horizontal_or_both: scroll_horizontal_or_both {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <0>;
+            flavor = "balanced";
+            tapping-term-ms = <240>;
+            quick-tap-ms = <150>;
+            bindings = <&both_scroll_hold>, <&scroll_horizontal>;
+            display-name = "Horizontal/Both Scroll";
         };
     };
 

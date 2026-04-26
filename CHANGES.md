@@ -19,6 +19,11 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 - Added a MOUSE-layer scroll hold macro that clears `HSCROLL` on release.
 - Mirrored the right-hand MOUSE layer controls onto the left hand and copied them onto SNIPE/SCROLL/HSCROLL to prevent base-layer fallthrough.
 - Made vertical and horizontal scroll mode macros mutually exclusive.
+- Changed scroll mode selection to a single mirrored toggle key.
+- Moved mouse-mode scroll toggle to `R`/`E` and default exit to `N`/`I`.
+- Moved mouse-mode SNIPE toggle to `L`/`U`.
+- Added hold behavior on the scroll toggle for temporary both-axis scroll.
+- Added `BSCROLL` as a both-axis PMW3610 scroll layer.
 - Updated num layer
 - Removed backspace combo
 
