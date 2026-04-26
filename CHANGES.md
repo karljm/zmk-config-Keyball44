@@ -4,6 +4,12 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 
 ## Unreleased
 
+### Commit: Refine edit layer cleanup and sticky mod combos
+
+- Added quick-release sticky modifier behavior for mod combos.
+- Routed EDIT Space through a custom hold-tap that clears toggled Mouse/Scroll layers on release.
+- Added explicit layer toggle on/off helpers for EDIT layer mouse modes.
+
 ### Commit: Refine Keyball layout, layers, and combos
 
 - Added Totem-style GUI/Ctrl/Alt Tab switching macros and `SWITCH` layer.
