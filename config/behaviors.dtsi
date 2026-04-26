@@ -86,6 +86,28 @@
     };
 
     behaviors {
+        edit_parent: edit_parent {
+            compatible = "zmk,behavior-edit-parent";
+            #binding-cells = <1>;
+            display-name = "Edit Parent";
+        };
+
+        edit_child: edit_child {
+            compatible = "zmk,behavior-edit-child-layer";
+            #binding-cells = <1>;
+            display-name = "Edit Child";
+        };
+
+        edit_lt: edit_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <240>;
+            quick-tap-ms = <150>;
+            bindings = <&edit_parent>, <&kp>;
+            display-name = "Edit Layer-Tap";
+        };
+
         // Mod-morphs
         cmqus: comma_question {
             compatible = "zmk,behavior-mod-morph";

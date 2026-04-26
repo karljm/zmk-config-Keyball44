@@ -1,0 +1,7 @@
+name: zmk-behavior-keyball-edit
+
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    dts_root: .

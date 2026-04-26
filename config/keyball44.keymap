@@ -41,7 +41,7 @@
             &lt OPTIONS ESCAPE &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &lt OPTIONS BACKSPACE
             &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &lt NUM SQT
             &sw_ctl_next    &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
-            &kp LGUI        &sw_gui_next  &mo MOUSE  &lt EDIT SPACE  &mo SCROLL            &mo SYM    &mo EDIT                                    &to MOUSE
+            &kp LGUI        &sw_gui_next  &mo MOUSE  &edit_lt EDIT SPACE  &mo SCROLL       &mo SYM    &edit_parent EDIT                           &to MOUSE
             >;
         };
 
@@ -119,8 +119,8 @@
             label = "EDIT";
             bindings = <
             &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
-            &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
-            &none  &none  &none      &mo SCROLL  &mo MOUSE &none                       &none  &none         &none      &none  &none  &none
+            &none  &sk LSHIFT  &kp ESCAPE  &kp TAB  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
+            &none  &none  &none      &edit_child SCROLL  &edit_child MOUSE &none      &none  &none         &none      &none  &none  &none
             &none  &none  &none      &none  &none                                      &none  &none                                  &none
             >;
         };
@@ -129,7 +129,7 @@
             label = "SWITCH";
             bindings = <
             &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
-            &kp ESCAPE  &none  &kp LS(TAB)  &kp TAB  &none  &none                       &none  &none  &none  &none  &none  &none
+            &none &kp ESCAPE  &none  &kp LS(TAB)  &kp TAB  &none                       &none  &none  &none  &none  &none  &none
             &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
             &none  &none  &none        &none    &none                                  &none  &none                          &none
             >;

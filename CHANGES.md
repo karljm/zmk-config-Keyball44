@@ -6,6 +6,7 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 
 ### Commit: Refine Keyball layout, layers, and combos
 
+- Added custom `EDIT` parent/child behaviors so `39` can stay `Space` on tap, `39`/`42` hold `EDIT`, and tapping `27` or `28` inside `EDIT` latches `SCROLL`/`MOUSE` until the thumb is released.
 - Added Totem-style GUI/Ctrl/Alt Tab switching macros and `SWITCH` layer.
 - Added switch combos for GUI/Ctrl/Alt next and previous tab switching.
 - Added `OPTIONS` layer on hold for positions 0 and 11 with bootloader, reset, external power, and Bluetooth controls.
