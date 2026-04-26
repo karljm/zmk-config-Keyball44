@@ -9,6 +9,8 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 - Added quick-release sticky modifier behavior for mod combos.
 - Routed EDIT Space through a custom hold-tap that clears toggled Mouse/Scroll layers on release.
 - Added explicit layer toggle on/off helpers for EDIT layer mouse modes.
+- Moved `EDIT` to layer 4 so toggled Mouse/Scroll layers can sit above it while held.
+- Removed backspace combo
 
 ### Commit: Refine Keyball layout, layers, and combos
 

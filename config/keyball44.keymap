@@ -2,11 +2,11 @@
 #define NUM     1
 #define SYM     2
 #define FUN     3
-#define MOUSE   4
-#define SCROLL  5
-#define SNIPE   6
-#define SETTING 7
-#define EDIT    8
+#define EDIT    4
+#define MOUSE   5
+#define SCROLL  6
+#define SNIPE   7
+#define SETTING 8
 #define SWITCH  9
 #define OPTIONS 10
 
@@ -75,6 +75,16 @@
             >;
         };
 
+        edit_layer {
+            label = "EDIT";
+            bindings = <
+            &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
+            &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
+            &none  &none  &none      &tog_on SCROLL     &tog_on MOUSE     &none       &none  &none         &none      &none  &none  &none
+            &none  &none  &none      &none  &none                                      &none  &none                                  &none
+            >;
+        };
+
         mouse_layer {
             label = "MOUSE";
             bindings = <
@@ -115,23 +125,13 @@
             >;
         };
 
-        edit_layer {
-            label = "EDIT";
-            bindings = <
-            &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
-            &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
-            &none  &none  &none      &tog_on SCROLL     &tog_on MOUSE     &none       &none  &none         &none      &none  &none  &none
-            &none  &none  &none      &none  &none                                      &none  &none                                  &none
-            >;
-        };
-
         switch_layer {
             label = "SWITCH";
             bindings = <
             &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
-            &none &kp ESCAPE    &kp LS(TAB)  &kp TAB  &none  &none                       &none  &none  &none  &none  &none  &none
+            &none  &none  &kp ESCAPE    &kp LS(TAB)  &kp TAB    &none                       &none  &none  &none  &none  &none  &none
             &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
-            &none  &none  &none        &kp TAB    &none                                  &none  &none                          &none
+            &none  &none  &none        &kp ESCAPE    &none                                  &none  &none                          &none
             >;
         };
 
