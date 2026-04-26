@@ -89,9 +89,9 @@
         mouse_layer {
             label = "MOUSE";
             bindings = <
-            &none   &kp N1          &kp N2          &kp N3        &kp N4     &kp N5            &kp N6         &kp N7     &kp N8      &kp N9     &kp N0     &to 0
-            &none   &none           &none           &kp UP        &kp DOWN  &none             &kp PAGE_UP    &mkp LCLK  &mo SCROLL  &mkp RCLK  &mkp MCLK  &none
-            &none   &none           &none           &kp LEFT      &kp RIGHT      &none             &kp PAGE_DOWN  &mkp MB4   &tog_on SNIPE       &mkp MB5   &none      &none
+            &none   &none           &scroll_horizontal  &scroll_vertical  &none      &none        &none   &none      &scroll_vertical  &scroll_horizontal     &none           &none
+            &none   &tog_on SNIPE   &mkp MCLK        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &mkp MCLK           &tog_on SNIPE   &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
             &trans  &trans          &trans          &trans        &trans                       &trans         &trans                                      &to MOUSE
             >;
         };
@@ -99,9 +99,9 @@
         snipe_layer {
             label = "SNIPE";
             bindings = <
-            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &tog_off SNIPE  &trans  &trans  &trans
+            &none   &none           &scroll_horizontal  &scroll_vertical  &none      &none        &none   &none      &scroll_vertical  &scroll_horizontal     &none           &none
+            &none   &tog_off SNIPE  &mkp MCLK        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &mkp MCLK           &tog_off SNIPE  &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
             &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
             >;
         };
@@ -109,20 +109,20 @@
         scroll_layer {
             label = "SCROLL";
             bindings = <
-            &bootloader       &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &bootloader
-            &sys_reset        &trans  &trans  &trans  &trans  &trans                        &trans  &tog_on HSCROLL  &tog_off HSCROLL  &trans  &trans  &sys_reset
-            &ext_power EP_OFF &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &ext_power EP_ON
-            &trans            &trans  &trans  &trans  &trans                                &trans  &trans                          &trans
+            &none   &none           &scroll_horizontal  &scroll_vertical  &none      &none        &none   &none      &scroll_vertical  &scroll_horizontal     &none           &none
+            &none   &tog_on SNIPE   &mkp MCLK        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &mkp MCLK           &tog_on SNIPE   &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
+            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
             >;
         };
 
         horizontal_scroll_layer {
             label = "HSCROLL";
             bindings = <
-            &bootloader       &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &bootloader
-            &sys_reset        &trans  &trans  &trans  &trans  &trans                        &trans  &tog_on HSCROLL  &tog_off HSCROLL  &trans  &trans  &sys_reset
-            &ext_power EP_OFF &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &ext_power EP_ON
-            &trans            &trans  &trans  &trans  &trans                                &trans  &trans                          &trans
+            &none   &none           &scroll_horizontal  &scroll_vertical  &none      &none        &none   &none      &scroll_vertical  &scroll_horizontal     &none           &none
+            &none   &tog_on SNIPE   &mkp MCLK        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &mkp MCLK           &tog_on SNIPE   &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
+            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
             >;
         };
 

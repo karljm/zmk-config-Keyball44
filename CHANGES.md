@@ -15,7 +15,10 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 - Added SNIPE toggle access on MOUSE layer position 32.
 - Moved `SNIPE` directly above `MOUSE` so transparent SNIPE keys fall through to mouse controls.
 - Increased default PMW3610 CPI to `1600`.
-- Added PMW3610 automouse timeout cleanup for `SNIPE` and `HSCROLL`.
+- Added a MOUSE-layer exit macro that clears `SNIPE`, `HSCROLL`, `SCROLL`, and `MOUSE`.
+- Added a MOUSE-layer scroll hold macro that clears `HSCROLL` on release.
+- Mirrored the right-hand MOUSE layer controls onto the left hand and copied them onto SNIPE/SCROLL/HSCROLL to prevent base-layer fallthrough.
+- Made vertical and horizontal scroll mode macros mutually exclusive.
 - Updated num layer
 - Removed backspace combo
 

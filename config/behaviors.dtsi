@@ -94,6 +94,41 @@
                 , <&macro_release &mo EDIT>
                 ;
         };
+
+        mouse_to_default: mouse_to_default {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog_off SNIPE &tog_off HSCROLL &tog_off SCROLL &tog_off MOUSE &to DEFAULT>
+                ;
+        };
+
+        mouse_scroll_hold: mouse_scroll_hold {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo SCROLL>
+                , <&macro_pause_for_release>
+                , <&macro_tap &tog_off HSCROLL>
+                , <&macro_release &mo SCROLL>
+                ;
+        };
+
+        scroll_vertical: scroll_vertical {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog_off HSCROLL &tog_on SCROLL>
+                ;
+        };
+
+        scroll_horizontal: scroll_horizontal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog_off SCROLL &tog_on HSCROLL>
+                ;
+        };
     };
 
     behaviors {
