@@ -2,10 +2,15 @@
 #define NUM     1
 #define SYM     2
 #define FUN     3
-#define MOUSE   4
-#define SCROLL  5
+#define EDIT    4
+#define MOUSE   5
 #define SNIPE   6
-#define SETTING 7
+#define SCROLL  7
+#define HSCROLL 8
+#define BSCROLL 9
+#define SETTING 10
+#define SWITCH  11
+#define OPTIONS 12
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -35,19 +40,19 @@
         default_layer {
             label = "QWRT";
             bindings = <
-            &kp ESCAPE      &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &kp BACKSPACE
-            &kp LCTRL       &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &kp SQT
-            &kp LEFT_SHIFT  &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp FSLH   &kp COMMA &kp DOT    &kp RIGHT_SHIFT
-            &kp LGUI        &kp LALT  &lt FUN ESCAPE  &lt MOUSE SPACE  &lt SCROLL TAB             &kp ENTER  &lt SYM BACKSPACE                           &to MOUSE
+            &lt OPTIONS ESCAPE &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &lt OPTIONS BACKSPACE
+            &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &lt NUM SQT
+            &sw_ctl_next    &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
+            &kp LGUI        &sw_gui_next  &mo MOUSE  &edit_lt EDIT SPACE  &mo SCROLL            &mo SYM    &edit_hold_cleanup                                    &to MOUSE
             >;
         };
 
         number_layer {
             label = "NUM";
             bindings = <
-            &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5          &kp NUMBER_6   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &none
-            &none   &kp LEFT      &kp DOWN      &kp UP_ARROW  &kp RIGHT     &none                 &none          &none         &none         &none         &none         &none
-            &none   &none         &none         &none         &none         &none                 &none          &none         &trans        &trans        &none         &none
+            &trans  &none         &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none                &none          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &trans
+            &trans  &none  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp NUMBER_0                &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &trans
+            &none   &none         &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none                &none          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none         &none
             &trans  &trans        &trans        &trans        &trans                              &trans         &trans                                                  &trans
             >;
         };
@@ -72,32 +77,62 @@
             >;
         };
 
-        mouse_layer {
-            label = "MOUSE";
+        edit_layer {
+            label = "EDIT";
             bindings = <
-            &none   &kp N1          &kp N2          &kp N3        &kp N4     &kp N5            &kp N6         &kp N7     &kp N8      &kp N9     &kp N0     &to 0
-            &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none             &kp PAGE_UP    &mkp LCLK  &mo SCROLL  &mkp RCLK  &mkp MCLK  &none
-            &none   &none           &none           &none         &none      &none             &kp PAGE_DOWN  &mkp MB4   &none       &mkp MB5   &none      &none
-            &trans  &trans          &trans          &trans        &trans                       &trans         &trans                                      &to MOUSE
+            &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
+            &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
+            &none  &none  &none      &tog_on SCROLL     &tog_on MOUSE     &none       &none  &none         &none      &none  &none  &none
+            &none  &none  &none      &none  &none                                      &none  &none                                  &none
             >;
         };
 
-        scroll_layer {
-            label = "SCROLL";
+        mouse_layer {
+            label = "MOUSE";
             bindings = <
-            &bootloader       &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &bootloader
-            &sys_reset        &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &sys_reset
-            &ext_power EP_OFF &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &ext_power EP_ON
-            &trans            &trans  &trans  &trans  &trans                                &trans  &trans                          &trans
+            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
+            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
+            &none   &none           &none &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &none   &none           &none
+            &trans  &trans          &trans          &trans        &trans                       &trans         &trans                                      &to MOUSE
             >;
         };
 
         snipe_layer {
             label = "SNIPE";
             bindings = <
-            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+            &none   &none           &tog_off SNIPE  &none  &none      &none        &none   &none      &none  &tog_off SNIPE     &none           &none
+            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
+            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            >;
+        };
+
+        scroll_layer {
+            label = "SCROLL";
+            bindings = <
+            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
+            &none   &mouse_to_default   &scroll_horizontal_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_horizontal_or_both 0 0           &mouse_to_default   &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
+            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            >;
+        };
+
+        horizontal_scroll_layer {
+            label = "HSCROLL";
+            bindings = <
+            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
+            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
+            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            >;
+        };
+
+        both_scroll_layer {
+            label = "BSCROLL";
+            bindings = <
+            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
+            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
+            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
             &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
             >;
         };
@@ -109,6 +144,26 @@
             &trans  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans            &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans      &trans        &trans        &trans        &trans            &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans      &trans        &trans        &trans                          &trans  &trans                          &trans
+            >;
+        };
+
+        switch_layer {
+            label = "SWITCH";
+            bindings = <
+            &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
+            &none  &none  &kp ESCAPE    &kp LS(TAB)  &kp TAB    &none                       &none  &none  &none  &none  &none  &none
+            &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
+            &none  &none  &none        &kp ESCAPE    &none                                  &none  &none                          &none
+            >;
+        };
+
+        options_layer {
+            label = "OPTIONS";
+            bindings = <
+            &none       &none        &none        &none        &none        &bootloader      &bootloader  &none  &none  &none  &none  &none
+            &sys_reset        &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none      &none  &none  &none  &none  &none  &sys_reset
+            &ext_power EP_OFF &none  &none      &none        &none        &none          &none  &none  &none  &none  &none  &ext_power EP_ON
+            &none             &none  &none      &none        &none                       &none  &none                          &none
             >;
         };
     };
