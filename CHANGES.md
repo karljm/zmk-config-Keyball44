@@ -11,6 +11,11 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 - Added explicit layer toggle on/off helpers for EDIT layer mouse modes.
 - Moved `EDIT` to layer 4 so toggled Mouse/Scroll layers can sit above it while held.
 - Updated Keyball trackball automouse, scroll, and snipe layer targets after the layer reorder.
+- Added vertical/horizontal scroll mode selection on `SCROLL` layer positions 19 and 20.
+- Added SNIPE toggle access on MOUSE layer position 32.
+- Moved `SNIPE` directly above `MOUSE` so transparent SNIPE keys fall through to mouse controls.
+- Increased default PMW3610 CPI to `1600`.
+- Updated num layer
 - Removed backspace combo
 
 ### Commit: Refine Keyball layout, layers, and combos

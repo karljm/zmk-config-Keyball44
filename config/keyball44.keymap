@@ -4,11 +4,12 @@
 #define FUN     3
 #define EDIT    4
 #define MOUSE   5
-#define SCROLL  6
-#define SNIPE   7
-#define SETTING 8
-#define SWITCH  9
-#define OPTIONS 10
+#define SNIPE   6
+#define SCROLL  7
+#define HSCROLL 8
+#define SETTING 9
+#define SWITCH  10
+#define OPTIONS 11
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -49,7 +50,7 @@
             label = "NUM";
             bindings = <
             &trans  &none         &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none                &none          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &trans
-            &trans  &kp NUMBER_0  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &none                &none          &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp NUMBER_0  &trans
+            &trans  &none  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp NUMBER_0                &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &trans
             &none   &none         &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none                &none          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none         &none
             &trans  &trans        &trans        &trans        &trans                              &trans         &trans                                                  &trans
             >;
@@ -90,18 +91,8 @@
             bindings = <
             &none   &kp N1          &kp N2          &kp N3        &kp N4     &kp N5            &kp N6         &kp N7     &kp N8      &kp N9     &kp N0     &to 0
             &none   &none           &none           &kp UP        &kp DOWN  &none             &kp PAGE_UP    &mkp LCLK  &mo SCROLL  &mkp RCLK  &mkp MCLK  &none
-            &none   &none           &none           &kp LEFT      &kp RIGHT      &none             &kp PAGE_DOWN  &mkp MB4   &none       &mkp MB5   &none      &none
+            &none   &none           &none           &kp LEFT      &kp RIGHT      &none             &kp PAGE_DOWN  &mkp MB4   &tog_on SNIPE       &mkp MB5   &none      &none
             &trans  &trans          &trans          &trans        &trans                       &trans         &trans                                      &to MOUSE
-            >;
-        };
-
-        scroll_layer {
-            label = "SCROLL";
-            bindings = <
-            &bootloader       &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &bootloader
-            &sys_reset        &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &sys_reset
-            &ext_power EP_OFF &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &ext_power EP_ON
-            &trans            &trans  &trans  &trans  &trans                                &trans  &trans                          &trans
             >;
         };
 
@@ -110,8 +101,28 @@
             bindings = <
             &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
-            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &trans  &trans  &trans  &trans
+            &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans  &tog_off SNIPE  &trans  &trans  &trans
             &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            >;
+        };
+
+        scroll_layer {
+            label = "SCROLL";
+            bindings = <
+            &bootloader       &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &bootloader
+            &sys_reset        &trans  &trans  &trans  &trans  &trans                        &trans  &tog_on HSCROLL  &tog_off HSCROLL  &trans  &trans  &sys_reset
+            &ext_power EP_OFF &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &ext_power EP_ON
+            &trans            &trans  &trans  &trans  &trans                                &trans  &trans                          &trans
+            >;
+        };
+
+        horizontal_scroll_layer {
+            label = "HSCROLL";
+            bindings = <
+            &bootloader       &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &bootloader
+            &sys_reset        &trans  &trans  &trans  &trans  &trans                        &trans  &tog_on HSCROLL  &tog_off HSCROLL  &trans  &trans  &sys_reset
+            &ext_power EP_OFF &trans  &trans  &trans  &trans  &trans                        &trans  &trans  &trans  &trans  &trans  &ext_power EP_ON
+            &trans            &trans  &trans  &trans  &trans                                &trans  &trans                          &trans
             >;
         };
 
