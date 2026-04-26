@@ -1,0 +1,11 @@
+#define DEFAULT 0
+#define NUM     1
+#define SYM     2
+#define FUN     3
+#define MOUSE   4
+#define SCROLL  5
+#define SNIPE   6
+#define SETTING 7
+#define EDIT    8
+#define SWITCH  9
+#define OPTIONS 10

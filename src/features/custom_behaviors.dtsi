@@ -1,0 +1,45 @@
+/ {
+    behaviors {
+        edit_parent: edit_parent {
+            compatible = "zmk,behavior-edit-parent";
+            #binding-cells = <1>;
+            display-name = "Edit Parent";
+        };
+
+        edit_child: edit_child {
+            compatible = "zmk,behavior-edit-child-layer";
+            #binding-cells = <1>;
+            display-name = "Edit Child";
+        };
+
+        edit_lt: edit_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <240>;
+            quick-tap-ms = <150>;
+            bindings = <&edit_parent>, <&kp>;
+            display-name = "Edit Layer-Tap";
+        };
+
+        cmqus: comma_question {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_QUESTION";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dtsmi: dot_semi {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_SEMI";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+    };
+};
+
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};

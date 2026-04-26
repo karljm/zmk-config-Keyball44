@@ -43,6 +43,8 @@ static int edit_parent_activate_child_layer(uint32_t layer) {
 
 #define DT_DRV_COMPAT zmk_behavior_edit_parent
 
+#if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
+
 static int edit_parent_binding_pressed(struct zmk_behavior_binding *binding,
                                        struct zmk_behavior_binding_event event) {
     LOG_DBG("edit parent press: position %d layer %d", event.position, binding->param1);
@@ -86,8 +88,12 @@ static const struct behavior_driver_api behavior_edit_parent_driver_api = {
 BEHAVIOR_DT_INST_DEFINE(0, NULL, NULL, NULL, NULL, POST_KERNEL, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,
                         &behavior_edit_parent_driver_api);
 
+#endif /* DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT) */
+
 #undef DT_DRV_COMPAT
 #define DT_DRV_COMPAT zmk_behavior_edit_child_layer
+
+#if DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT)
 
 static int edit_child_binding_pressed(struct zmk_behavior_binding *binding,
                                       struct zmk_behavior_binding_event event) {
@@ -113,3 +119,5 @@ static const struct behavior_driver_api behavior_edit_child_driver_api = {
 
 BEHAVIOR_DT_INST_DEFINE(0, NULL, NULL, NULL, NULL, POST_KERNEL, CONFIG_KERNEL_INIT_PRIORITY_DEFAULT,
                         &behavior_edit_child_driver_api);
+
+#endif /* DT_HAS_COMPAT_STATUS_OKAY(DT_DRV_COMPAT) */

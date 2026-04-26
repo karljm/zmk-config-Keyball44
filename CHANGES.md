@@ -6,7 +6,9 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 
 ### Commit: Refine Keyball layout, layers, and combos
 
-- Added a repo-local custom ZMK module, with `src/keyball_custom_behaviors.c` as the shared home for bespoke behavior logic.
+- Refactored the config into `src/definitions/` and `src/features/` so shared includes, layer IDs, and feature snippets follow the same structure as the reference repo.
+- Added a repo-local custom ZMK module, with `src/behaviors/custom_behaviors.c` as the shared home for bespoke behavior logic.
+- Shifted switcher layer keys to the right
 - Replaced the global conditional `EDIT` -> `SCROLL`/`MOUSE` rule with custom parent/child `EDIT` behaviors so the normal `MOUSE` and `SCROLL` access paths still work.
 - Added Totem-style GUI/Ctrl/Alt Tab switching macros and `SWITCH` layer.
 - Added switch combos for GUI/Ctrl/Alt next and previous tab switching.

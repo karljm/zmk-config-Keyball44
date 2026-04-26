@@ -1,0 +1,11 @@
+&lt {
+    tapping-term-ms = <240>;
+    flavor = "balanced";
+    quick-tap-ms = <150>;
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    flavor = "tap-preferred";
+    quick-tap-ms = <150>;
+};
