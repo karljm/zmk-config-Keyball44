@@ -142,7 +142,7 @@
 
         scroll_vertical_or_both: scroll_vertical_or_both {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <240>;
             quick-tap-ms = <150>;
@@ -152,7 +152,7 @@
 
         scroll_horizontal_or_both: scroll_horizontal_or_both {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <240>;
             quick-tap-ms = <150>;
