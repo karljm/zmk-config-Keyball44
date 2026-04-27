@@ -7,6 +7,8 @@
             bindings = <&to 0>;
         };
 
+
+        // MODIFIERS
         combo_lgui {
             timeout-ms = <50>;
             key-positions = <39 14>;
@@ -47,12 +49,6 @@
             bindings = <&bootloader>;
         };
 
-        combo_setting {
-            timeout-ms = <50>;
-            key-positions = <42 43>;
-            bindings = <&mo SETTING>;
-        };
-
         combo_rgui {
             timeout-ms = <50>;
             key-positions = <42 21>;
@@ -81,6 +77,13 @@
             slow-release;
         };
 
+        // LAYERS
+        combo_setting {
+            timeout-ms = <50>;
+            key-positions = <42 43>;
+            bindings = <&mo SETTING>;
+        };
+
         combo_mouse {
             timeout-ms = <50>;
             key-positions = <38 28>;
@@ -95,23 +98,24 @@
             slow-release;
         };
 
+        // SWITCHING
         combo_gui_next {
             timeout-ms = <50>;
-            key-positions = <14 16>;
+            key-positions = <14 16 39>;
             bindings = <&sw_gui_next>;
             slow-release;
         };
 
         combo_ctl_next {
             timeout-ms = <50>;
-            key-positions = <13 16>;
+            key-positions = <13 16 39>;
             bindings = <&sw_ctl_next>;
             slow-release;
         };
 
         combo_alt_next {
             timeout-ms = <50>;
-            key-positions = <26 26>;
+            key-positions = <26 28 39>;
             bindings = <&sw_alt_next>;
             slow-release;
         };
