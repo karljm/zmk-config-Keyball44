@@ -40,9 +40,9 @@
         default_layer {
             label = "QWRT";
             bindings = <
-            &lt OPTIONS ESCAPE &kp B     &kp L         &kp D        &kp W      &kp Z                 &none            &kp F  &kp O      &kp U    &kp J      &lt OPTIONS BACKSPACE
-            &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &lt NUM SQT
-            &sw_ctl_next    &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
+            &mo OPTIONS &kp B     &kp L         &kp D        &kp W      &kp EXCL                 &kp QUESTION            &kp F  &kp O      &kp U    &kp J      &mo OPTIONS 
+            &mo NUM   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &mo NUM 
+            &sw_ctl_next    &kp FSLH     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
             &sw_alt_next    &sw_gui_next  &mo MOUSE  &edit_lt EDIT SPACE  &mo SCROLL            &mo SYM    &edit_hold_cleanup                                    &to MOUSE
             >;
         };
@@ -151,9 +151,9 @@
             label = "SWITCH";
             bindings = <
             &none  &none  &none        &none    &none  &none                            &none  &none  &none  &none  &none  &none
-            &none  &none  &none    &kp LS(TAB)  &kp TAB    &none                       &none  &none  &none  &none  &none  &none
-            &none  &none  &none    &kp LS(TAB)  &kp TAB    &none                       &none  &none  &none  &none  &none  &none
-            &none  &none  &none        &kp ESCAPE    &none                                  &none  &none                          &none
+            &none  &none &kp ESCAPE  &kp LS(TAB)  &kp TAB    &none                       &none  &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
+            &none  &none &kp ESCAPE  &kp LS(TAB)  &kp TAB    &none                       &none  &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
+            &none  &none  &none        &none    &none                                  &none  &none                          &none
             >;
         };
 
