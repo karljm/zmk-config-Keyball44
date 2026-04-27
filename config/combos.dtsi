@@ -83,14 +83,14 @@
 
         combo_mouse {
             timeout-ms = <50>;
-            key-positions = <39 28>;
+            key-positions = <38 28>;
             bindings = <&mo MOUSE>;
             slow-release;
         };
 
         combo_scroll {
             timeout-ms = <50>;
-            key-positions = <39 27>;
+            key-positions = <38 27>;
             bindings = <&mo SCROLL>;
             slow-release;
         };
@@ -111,7 +111,7 @@
 
         combo_alt_next {
             timeout-ms = <50>;
-            key-positions = <26 16>;
+            key-positions = <26 26>;
             bindings = <&sw_alt_next>;
             slow-release;
         };
