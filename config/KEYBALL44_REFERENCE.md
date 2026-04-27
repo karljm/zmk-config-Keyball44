@@ -25,12 +25,12 @@
 │ESC│ B │ L │ D │ W │ Z │               │   │ F │ O │ U │ J │BSP│
 │OPT│   │   │   │   │   │               │   │   │   │   │   │OPT│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│/NM│ N │ R │ T │ S │ G │               │ Y │ H │ A │ E │ I │'NM│
+│ / │ N │ R │ T │ S │ G │               │ Y │ H │ A │ E │ I │ ' │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
 │CTN│ / │ X │ M │ C │ V │               │ K │ P │ . │ , │ ; │SFT│
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │GUI│GUN│   │ESC│SPC│TAB│       │SYM│EDT│   │   ●   │MOU│
-    │   │   │   │FUN│EDT│SCR│       │   │   │   │       │   │
+    │GUI│GUN│   │NUM│SPC│TAB│       │   │EDT│   │   ●   │MOU│
+    │   │   │   │   │EDT│SCR│       │   │   │   │       │   │
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
@@ -39,10 +39,10 @@
 |----------|-----|-----|------|
 | 36 | Left outer | GUI | - |
 | 37 | Left outer 2 | GUI next | - |
-| 38 | Left middle | Escape | FUN layer |
+| 38 | Left middle | - | NUM layer |
 | 39 | Left inner | Space | EDIT layer |
 | 40 | Left inner 2 | Tab | SCROLL layer |
-| 41 | Right outer | - | SYM layer |
+| 41 | Right outer | - | - |
 | 42 | Right inner | - | EDIT layer |
 | 43 | Far right | - | TO MOUSE |
 
@@ -50,7 +50,7 @@
 | Position | Key |
 |----------|-----|
 | Top left | Escape / OPTIONS layer |
-| Home left | Slash / NUM layer |
+| Home left | Slash |
 | Bottom left | Ctrl next |
 | Top right | Backspace / OPTIONS layer |
 | Home right | Single Quote |
@@ -66,7 +66,7 @@
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
 │   │   │ 7 │ 8 │ 9 │   │               │   │ 9 │ 8 │ 7 │   │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │ 0 │ 1 │ 2 │ 3 │   │               │   │ 3 │ 2 │ 1 │ 0 │   │
+│FUN│ 0 │ 1 │ 2 │ 3 │   │               │   │ 3 │ 2 │ 1 │ 0 │FUN│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
 │   │   │ 4 │ 5 │ 6 │   │               │   │ 6 │ 5 │ 4 │   │   │
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
@@ -74,37 +74,11 @@
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-**Access:** Hold position 12 or position 23.
+**Access:** Hold position 38. Releasing the NUM hold clears both NUM and FUN.
+
+**FUN access from NUM:** Press position 12 or 23 while on NUM.
 
 ---
-
-### SYM Layer
-
-```
-┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│ ` │ | │ & │ ? │ ! │ @ │               │ ^ │ # │ * │ $ │ \ │   │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│ ~ │ " │ { │ ( │ ) │ } │               │ _ │ = │ + │ - │ % │   │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │ ' │ < │ [ │ ] │ > │               │ : │ ; │ / │ , │ . │   │
-└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
-    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
-```
-
-**Available Symbols:**
-
-| Left Hand | | | | |
-|-----------|---|---|---|---|
-| ` | \| | & | ? | ! |
-| ~ | " | { | ( | ) |
-| ' | < | [ | ] | > |
-
-| Right Hand | | | | |
-|------------|---|---|---|---|
-| @ | ^ | # | * | $ |
-| } | _ | = | + | - |
-| : | ; | / | , | . |
 
 ### EDIT Layer (hold key 39 or key 42)
 
@@ -131,17 +105,17 @@
 
 ---
 
-### FUN Layer (hold left thumb middle)
+### FUN Layer (from NUM position 12 or 23)
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│   │F1 │F2 │F3 │F4 │   │               │   │   │   │   │   │   │
+│   │F12│F9 │F8 │F7 │   │               │   │F7 │F8 │F9 │F12│   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │F5 │F6 │F7 │F8 │   │               │   │   │   │   │   │   │
+│   │F10│F3 │F2 │F1 │   │               │   │F1 │F2 │F3 │F10│   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │F9 │F10│F11│F12│   │               │   │   │   │   │   │   │
+│   │F11│F6 │F5 │F4 │   │               │   │F4 │F5 │F6 │F11│   │
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │   │   │   │   │   │   │       │   │mo3│   │   ●   │   │
+    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
@@ -376,9 +350,8 @@ Enabled with configuration:
 | Layer | Access Method |
 |-------|---------------|
 | DEFAULT | Base layer / TO 0 |
-| NUM | Hold key 12 or key 23 |
-| SYM | Hold key 41 |
-| FUN | Hold left thumb middle (key 38) |
+| NUM | Hold key 38 |
+| FUN | From NUM: key 12 or key 23 |
 | MOUSE | TO MOUSE |
 | SCROLL | Hold left thumb inner 2 (key 40) / From MOUSE layer |
 | SNIPE | No direct access |
@@ -418,7 +391,7 @@ Enabled with configuration:
 | Space | Left thumb inner (tap) |
 | Enter | R + S combo or EDIT layer position 17 |
 | Backspace | Top right or EDIT layer position 19 |
-| Escape | Left thumb middle tap, top left, or EDIT layer position 14 |
+| Escape | Top left or EDIT layer position 14 |
 | Tab | Left thumb inner 2 tap |
 
 ### Layer Access
@@ -426,9 +399,8 @@ Enabled with configuration:
 | Layer | Hold Key |
 |-------|----------|
 | OPTIONS | Escape or Backspace |
-| SYM | Right outer thumb |
 | EDIT | Left thumb Space or right thumb inner |
-| FUN | Left thumb Escape |
+| FUN | From NUM: key 12 or key 23 |
 | SCROLL | Left thumb Tab |
 
 ### Quick Modifiers (Combos)

@@ -55,9 +55,9 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio1 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	automouse-layer = <5>;
-	scroll-layers = <7 8 9>;
-	snipe-layers = <6>;
+	automouse-layer = <4>;
+	scroll-layers = <6 7 8>;
+	snipe-layers = <5>;
     };
 };
 
@@ -83,12 +83,12 @@
     device = <&trackball>;
 
     horizontal_scroll {
-      layers = <8>;
+      layers = <7>;
       input-processors = <&vscroll_zero 0 1>;
     };
 
     vertical_scroll {
-      layers = <7>;
+      layers = <6>;
       input-processors = <&hscroll_zero 0 1>;
     };
 

@@ -148,28 +148,28 @@
 
         combo_alt_next_both {
             timeout-ms = <30>;
-            key-positions = <40 19>;
+            key-positions = <20 16>;
             bindings = <&sw_alt_next>;
             slow-release;
         };
 
         combo_alt_prev_both {
             timeout-ms = <30>;
-            key-positions = <40 20>;
+            key-positions = <20 15>;
             bindings = <&sw_alt_prev>;
             slow-release;
         };
         
         combo_ctl_next_both {
             timeout-ms = <30>;
-            key-positions = <39 19>;
+            key-positions = <19 16>;
             bindings = <&sw_ctl_next>;
             slow-release;
         };
         
         combo_ctl_prev_both {
             timeout-ms = <30>;
-            key-positions = <39 20>;
+            key-positions = <19 15>;
             bindings = <&sw_ctl_prev>;
             slow-release;
         };
@@ -177,7 +177,7 @@
 
         combo_gui_next_both {
             timeout-ms = <30>;
-            key-positions = <38 19>;
+            key-positions = <21 16>;
             bindings = <&sw_gui_next>;
             slow-release;
         };
@@ -185,7 +185,7 @@
 
         combo_gui_prev_both {
             timeout-ms = <30>;
-            key-positions = <38 20>;
+            key-positions = <21 15>;
             bindings = <&sw_gui_prev>;
             slow-release;
         };

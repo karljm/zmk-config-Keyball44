@@ -1,16 +1,15 @@
 #define DEFAULT 0
 #define NUM     1
-#define SYM     2
-#define FUN     3
-#define EDIT    4
-#define MOUSE   5
-#define SNIPE   6
-#define SCROLL  7
-#define HSCROLL 8
-#define BSCROLL 9
-#define SETTING 10
-#define SWITCH  11
-#define OPTIONS 12
+#define FUN     2
+#define EDIT    3
+#define MOUSE   4
+#define SNIPE   5
+#define SCROLL  6
+#define HSCROLL 7
+#define BSCROLL 8
+#define SETTING 9
+#define SWITCH  10
+#define OPTIONS 11
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -41,9 +40,9 @@
             label = "QWRT";
             bindings = <
             &mo OPTIONS &kp B     &kp L         &kp D        &kp W      &kp EXCL                 &kp QUESTION            &kp F  &kp O      &kp U    &kp J      &mo OPTIONS 
-            &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &mo NUM 
+            &kp FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &none 
             &sw_ctl_next    &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
-            &sw_alt_next    &sw_gui_next  &mo MOUSE  &edit_lt EDIT SPACE  &mo SCROLL            &mo SYM    &edit_hold_cleanup                                    &to MOUSE
+            &sw_alt_next    &sw_gui_next  &num_hold_cleanup  &edit_lt EDIT SPACE  &mo SCROLL            &none    &edit_hold_cleanup                                    &to MOUSE
             >;
         };
 
@@ -51,29 +50,19 @@
             label = "NUM";
             bindings = <
             &trans  &none         &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none                &none          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &trans
-            &trans  &none  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &kp NUMBER_0                &kp NUMBER_0   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &trans
+            &tog_on FUN  &kp NUMBER_0  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &none                &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0         &tog_on FUN
             &none   &none         &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none                &none          &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none         &none
             &trans  &trans        &trans        &trans        &trans                              &trans         &trans                                                  &trans
-            >;
-        };
-
-        symbol_layer {
-            label = "SYM";
-            bindings = <
-            &kp GRAVE  &kp PIPE   &kp AMPS  &kp QMARK  &kp EXCL   &kp AT                    &kp CARET  &kp HASH   &kp ASTRK  &kp DLLR   &kp BSLH   &none
-            &kp TILDE  &kp DQT    &kp LBRC  &kp LPAR   &kp RPAR   &kp RBRC                  &kp UNDER  &kp EQUAL  &kp PLUS   &kp MINUS  &kp PRCNT  &none
-            &none      &kp SQT    &kp LT    &kp LBKT   &kp RBKT   &kp GT                    &kp COLON  &kp SEMI   &kp FSLH   &kp COMMA  &kp DOT    &none
-            &trans     &trans     &trans    &trans     &trans                               &trans     &trans                                     &trans
             >;
         };
 
         function_layer {
             label = "FUN";
             bindings = <
-            &none   &kp F1  &kp F2   &kp F3   &kp F4   &none                                 &none   &none  &none  &none  &none  &none
-            &none   &kp F5  &kp F6   &kp F7   &kp F8   &none                                 &none   &none  &none  &none  &none  &none
-            &none   &kp F9  &kp F10  &kp F11  &kp F12  &none                                 &none   &none  &none  &none  &none  &none
-            &trans  &trans  &trans   &trans   &trans                                         &trans  &mo 3                       &trans
+            &trans  &kp F12 &kp F9   &kp F8   &kp F7   &none                                 &none   &kp F7  &kp F8   &kp F9   &kp F12 &trans
+            &trans  &kp F10 &kp F3   &kp F2   &kp F1   &none                                 &none   &kp F1  &kp F2   &kp F3   &kp F10 &trans
+            &none   &kp F11 &kp F6   &kp F5   &kp F4   &none                                 &none   &kp F4  &kp F5   &kp F6   &kp F11 &none
+            &trans  &trans  &trans   &trans   &trans                                         &trans  &trans                          &trans
             >;
         };
 

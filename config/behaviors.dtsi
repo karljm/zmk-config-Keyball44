@@ -95,6 +95,17 @@
                 ;
         };
 
+        num_hold_cleanup: num_hold_cleanup {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &mo NUM>
+                , <&macro_pause_for_release>
+                , <&macro_tap &tog_off FUN &tog_off NUM>
+                , <&macro_release &mo NUM>
+                ;
+        };
+
         mouse_to_default: mouse_to_default {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
