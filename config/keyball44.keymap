@@ -42,7 +42,7 @@
             bindings = <
             &mo OPTIONS &kp B     &kp L         &kp D        &kp W      &kp EXCL                 &kp QUESTION            &kp F  &kp O      &kp U    &kp J      &mo OPTIONS 
             &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &mo NUM 
-            &sw_ctl_next    &kp q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
+            &sw_ctl_next    &kp Q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
             &sw_alt_next    &sw_gui_next  &mo MOUSE  &edit_lt EDIT SPACE  &mo SCROLL            &mo SYM    &edit_hold_cleanup                                    &to MOUSE
             >;
         };
