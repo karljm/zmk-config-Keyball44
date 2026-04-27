@@ -142,6 +142,84 @@
             bindings = <&sw_alt_prev>;
             slow-release;
         };
+        
+        
+        
+       
+        combo_lbkt {
+            timeout-ms = <30>;
+            key-positions = <7 9>;
+            bindings = <&kp LBKT>;
+        };
+        combo_rbkt {
+            timeout-ms = <30>;
+            key-positions = <7 10>;
+            bindings = <&kp RBKT>;
+        };
+
+        combo_lpar {
+            timeout-ms = <30>;
+            key-positions = <19 21>;
+            bindings = <&kp LPAR>;
+        };
+        combo_rpar {
+            timeout-ms = <30>;
+            key-positions = <19 22>;
+            bindings = <&kp RPAR>;
+        };
+        
+        combo_lbrc {
+            timeout-ms = <30>;
+            key-positions = <31 33>;
+            bindings = <&kp LBRC>;
+        };
+        combo_rbrc {
+            timeout-ms = <30>;
+            key-positions = <31 34>;
+            bindings = <&kp RBRC>;
+        };
+
+        combo_BLANK {
+            timeout-ms = <30>;
+            key-positions = <31 34>;
+            bindings = <&kp RBRC>;
+        };
+
+        combo_plus {
+            timeout-ms = <30>;
+            key-positions = <27 28>;
+            bindings = <&kp PLUS>;
+        };
+
+        combo_minus {
+            timeout-ms = <30>;
+            key-positions = <26 27>;
+            bindings = <&kp MINUS>;
+        };
+
+        combo_astrk {
+            timeout-ms = <30>;
+            key-positions = <14 15>;
+            bindings = <&kp ASTRK>;
+        };
+
+        combo_equal {
+            timeout-ms = <30>;
+            key-positions = <42 31>;
+            bindings = <&kp ASTRK>;
+        };
+
+        combo_under {
+            timeout-ms = <30>;
+            key-positions = <42 32>;
+            bindings = <&kp UNDER>;
+        };
+
+        combo_colon {
+            timeout-ms = <30>;
+            key-positions = <42 34>;
+            bindings = <&kp UNDER>;
+        };
 
         // ==========================================
         // LEFT SYMBOLS (left thumb 39 + left keys)
@@ -226,11 +304,6 @@
             key-positions = <42 8>;
             bindings = <&kp HASH>;
         };
-        combo_astrk {
-            timeout-ms = <50>;
-            key-positions = <42 9>;
-            bindings = <&kp ASTRK>;
-        };
         combo_dllr {
             timeout-ms = <50>;
             key-positions = <42 10>;
@@ -250,11 +323,6 @@
         };
 
         // Bottom row: :   ;   /   ,   .
-        combo_colon {
-            timeout-ms = <50>;
-            key-positions = <42 31>;
-            bindings = <&kp COLON>;
-        };
         combo_semi_r {
             timeout-ms = <50>;
             key-positions = <42 32>;

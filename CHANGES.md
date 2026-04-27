@@ -4,6 +4,8 @@ Use this file to track layout and behavior changes as the Keyball config evolves
 
 ## Unreleased
 
+- Updated some combos, added alt switcher to base layer
+
 ### Commit: Refine edit layer cleanup and sticky mod combos
 
 - Added quick-release sticky modifier behavior for mod combos.
