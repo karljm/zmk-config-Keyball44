@@ -74,12 +74,6 @@
             slow-release;
         };
 
-        combo_ent {
-            timeout-ms = <50>;
-            key-positions = <14 16>;
-            bindings = <&kp ENTER>;
-        };
-
         combo_ralt {
             timeout-ms = <50>;
             key-positions = <42 20>;
@@ -103,49 +97,27 @@
 
         combo_gui_next {
             timeout-ms = <50>;
-            key-positions = <39 13 16>;
+            key-positions = <14 16>;
             bindings = <&sw_gui_next>;
-            slow-release;
-        };
-
-        combo_gui_prev {
-            timeout-ms = <50>;
-            key-positions = <39 13 15>;
-            bindings = <&sw_gui_prev>;
             slow-release;
         };
 
         combo_ctl_next {
             timeout-ms = <50>;
-            key-positions = <39 14 16>;
+            key-positions = <13 16>;
             bindings = <&sw_ctl_next>;
-            slow-release;
-        };
-
-        combo_ctl_prev {
-            timeout-ms = <50>;
-            key-positions = <39 14 15>;
-            bindings = <&sw_ctl_prev>;
             slow-release;
         };
 
         combo_alt_next {
             timeout-ms = <50>;
-            key-positions = <39 12 16>;
+            key-positions = <26 16>;
             bindings = <&sw_alt_next>;
             slow-release;
         };
 
-        combo_alt_prev {
-            timeout-ms = <50>;
-            key-positions = <39 12 15>;
-            bindings = <&sw_alt_prev>;
-            slow-release;
-        };
-        
-        
-        
-       
+        // SYMBOLS
+
         combo_lbkt {
             timeout-ms = <30>;
             key-positions = <7 9>;
@@ -215,121 +187,5 @@
             bindings = <&kp UNDER>;
         };
 
-        // ==========================================
-        // LEFT SYMBOLS (left thumb 39 + left keys)
-        // ==========================================
-        // Top row: `   |   &   ?   !   @
-        combo_grave {
-            timeout-ms = <50>;
-            key-positions = <39 0>;
-            bindings = <&kp GRAVE>;
-        };
-        combo_pipe {
-            timeout-ms = <50>;
-            key-positions = <39 1>;
-            bindings = <&kp PIPE>;
-        };
-        combo_amps {
-            timeout-ms = <50>;
-            key-positions = <39 2>;
-            bindings = <&kp AMPS>;
-        };
-        combo_qmark {
-            timeout-ms = <50>;
-            key-positions = <39 3>;
-            bindings = <&kp QMARK>;
-        };
-        combo_excl {
-            timeout-ms = <50>;
-            key-positions = <39 4>;
-            bindings = <&kp EXCL>;
-        };
-        combo_at {
-            timeout-ms = <50>;
-            key-positions = <39 5>;
-            bindings = <&kp AT>;
-        };
-
-        // Home row positions 13-16 are reserved for left-hand modifier combos.
-        combo_tilde {
-            timeout-ms = <50>;
-            key-positions = <39 12>;
-            bindings = <&kp TILDE>;
-        };
-        // Bottom row: ;   '   <   [   ]   >
-        combo_semi {
-            timeout-ms = <50>;
-            key-positions = <39 24>;
-            bindings = <&kp SEMI>;
-        };
-        combo_sqt {
-            timeout-ms = <50>;
-            key-positions = <39 25>;
-            bindings = <&kp SQT>;
-        };
-        combo_lt {
-            timeout-ms = <50>;
-            key-positions = <39 26>;
-            bindings = <&kp LT>;
-        };
-
-        combo_gt {
-            timeout-ms = <50>;
-            key-positions = <39 29>;
-            bindings = <&kp GT>;
-        };
-        // ==========================================
-        // RIGHT SYMBOLS (right thumb 42 + right keys)
-        // ==========================================
-        // Top row: ^   #   *   $   BSLH
-        combo_caret {
-            timeout-ms = <50>;
-            key-positions = <42 7>;
-            bindings = <&kp CARET>;
-        };
-        combo_hash {
-            timeout-ms = <50>;
-            key-positions = <42 8>;
-            bindings = <&kp HASH>;
-        };
-        combo_dllr {
-            timeout-ms = <50>;
-            key-positions = <42 10>;
-            bindings = <&kp DLLR>;
-        };
-        combo_bslh {
-            timeout-ms = <50>;
-            key-positions = <42 11>;
-            bindings = <&kp BSLH>;
-        };
-
-        // Home row positions 19-22 are reserved for right-hand modifier combos.
-        combo_prcnt {
-            timeout-ms = <50>;
-            key-positions = <42 23>;
-            bindings = <&kp PRCNT>;
-        };
-
-        // Bottom row: :   ;   /   ,   .
-        combo_semi_r {
-            timeout-ms = <50>;
-            key-positions = <42 32>;
-            bindings = <&kp SEMI>;
-        };
-        combo_fslh {
-            timeout-ms = <50>;
-            key-positions = <42 33>;
-            bindings = <&kp FSLH>;
-        };
-        combo_comma {
-            timeout-ms = <50>;
-            key-positions = <42 34>;
-            bindings = <&kp COMMA>;
-        };
-        combo_dot {
-            timeout-ms = <50>;
-            key-positions = <42 35>;
-            bindings = <&kp DOT>;
-        };
     };
 };

@@ -82,7 +82,7 @@
             bindings = <
             &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
             &none  &sk LSHIFT  &kp ESCAPE  &none  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
-            &none  &none  &none      &tog_on SCROLL     &tog_on MOUSE     &none       &none  &none         &none      &none  &none  &none
+            &none  &none  &none      &none &none     &none       &none  &none         &none      &none  &none  &none
             &none  &none  &none      &none  &none                                      &none  &none                                  &none
             >;
         };
