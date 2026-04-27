@@ -41,8 +41,8 @@
             label = "QWRT";
             bindings = <
             &mo OPTIONS &kp B     &kp L         &kp D        &kp W      &kp EXCL                 &kp QUESTION            &kp F  &kp O      &kp U    &kp J      &mo OPTIONS 
-            &mo NUM   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &mo NUM 
-            &sw_ctl_next    &kp FSLH     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
+            &lt NUM FSLH   &kp N     &kp R         &kp T        &kp S      &kp G                 &kp Y            &kp H  &kp A      &kp E    &kp I      &mo NUM 
+            &sw_ctl_next    &kp q     &kp X         &kp M        &kp C      &kp V                 &kp K            &kp P  &kp DOT    &kp COMMA &kp SEMI   &kp RIGHT_SHIFT
             &sw_alt_next    &sw_gui_next  &mo MOUSE  &edit_lt EDIT SPACE  &mo SCROLL            &mo SYM    &edit_hold_cleanup                                    &to MOUSE
             >;
         };
@@ -82,7 +82,7 @@
             bindings = <
             &none  &none  &none      &none  &none  &none                              &none  &none         &none      &none  &none  &none
             &none  &sk LSHIFT  &kp ESCAPE  &kp TAB  &kp ENTER  &none                           &none  &kp BACKSPACE  &kp DELETE  &none &sk LSHIFT  &none
-            &none  &none  &none      &none &none     &none       &none  &none         &none      &none  &none  &none
+            &none  &sk LCTRL  &sk LGUI       &sk LALT &sk LSHIFT     &none                                  &kp LEFT  &kp DOWN         &kp UP      &kp RIGHT  &none  &none
             &none  &none  &none      &none  &none                                      &none  &none                                  &none
             >;
         };
@@ -92,7 +92,7 @@
             bindings = <
             &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
             &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
-            &none   &none           &none &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &none   &none           &none
+            &none   &none            &mkp MB5       &mkp MB4  &none &none        &none   &mkp MB4   &mkp MB5        &none   &none           &none
             &trans  &trans          &trans          &trans        &trans                       &trans         &trans                                      &to MOUSE
             >;
         };

@@ -14,17 +14,10 @@
         };
 
         // LETTERS
-        
-        combo_q {
-            timeout-ms = <25>;
-            key-positions = <26 28>;
-            bindings = <&skq LGUI>;
-        };
-
         combo_z {
             timeout-ms = <25>;
             key-positions = <3 4>;
-            bindings = <&skq LGUI>;
+            bindings = <&kp Z>;
         };
 
         // MODIFIERS
@@ -155,28 +148,28 @@
 
         combo_alt_next_both {
             timeout-ms = <30>;
-            key-positions = <6 16>;
+            key-positions = <40 19>;
             bindings = <&sw_alt_next>;
             slow-release;
         };
 
         combo_alt_prev_both {
             timeout-ms = <30>;
-            key-positions = <6 15>;
+            key-positions = <40 20>;
             bindings = <&sw_alt_prev>;
             slow-release;
         };
         
         combo_ctl_next_both {
             timeout-ms = <30>;
-            key-positions = <18 16>;
+            key-positions = <39 19>;
             bindings = <&sw_ctl_next>;
             slow-release;
         };
         
         combo_ctl_prev_both {
             timeout-ms = <30>;
-            key-positions = <18 15>;
+            key-positions = <39 20>;
             bindings = <&sw_ctl_prev>;
             slow-release;
         };
@@ -184,7 +177,7 @@
 
         combo_gui_next_both {
             timeout-ms = <30>;
-            key-positions = <30 16>;
+            key-positions = <38 19>;
             bindings = <&sw_gui_next>;
             slow-release;
         };
@@ -192,7 +185,7 @@
 
         combo_gui_prev_both {
             timeout-ms = <30>;
-            key-positions = <30 15>;
+            key-positions = <38 20>;
             bindings = <&sw_gui_prev>;
             slow-release;
         };
@@ -255,6 +248,12 @@
             key-positions = <25 28>;
             bindings = <&kp ASTRK>;
         };
+        
+        combo_percent {
+            timeout-ms = <25>;
+            key-positions = <26 28>;
+            bindings = <&kp PRCNT>;
+        };
 
         combo_equal {
             timeout-ms = <30>;
@@ -306,12 +305,6 @@
             timeout-ms = <30>;
             key-positions = <39 25>;
             bindings = <&kp BSLH>;
-        };
-
-        combo_percent {
-            timeout-ms = <30>;
-            key-positions = <39 26>;
-            bindings = <&kp PRCNT>;
         };
 
         combo_less_than {
