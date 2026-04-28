@@ -109,7 +109,7 @@
 
         combo_scroll {
             timeout-ms = <50>;
-            key-positions = <38 27>;
+            key-positions = <38 15>;
             bindings = <&tog_on SCROLL>;
             layers = <0>;
             slow-release;
