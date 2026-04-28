@@ -79,50 +79,50 @@
         mouse_layer {
             label = "MOUSE";
             bindings = <
-            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
-            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
-            &none   &none            &mkp MB5       &mkp MB4  &none &none        &none   &mkp MB4   &mkp MB5        &none   &none           &none
-            &trans  &trans          &trans          &trans        &trans                       &trans         &trans                                      &to MOUSE
+            &none   &none           &none               &none                           &none       &none               &none   &none       &none                           &none               &none           &none
+            &none   &tog_on SNIPE   &mouse_to_default   &scroll_vertical_or_both 0 0    &mkp LCLK   &none               &none   &mkp LCLK   &scroll_vertical_or_both 0 0    &mouse_to_default   &tog_on SNIPE   &none
+            &none   &none           &mkp MB4            &mkp MB5                        &mkp RCLK   &none               &none   &mkp RCLK   &mkp MB4                        &none               &none           &none
+                    &trans          &trans              &trans                          &trans      &trans              &trans  &trans                                      &to MOUSE
             >;
         };
 
         snipe_layer {
             label = "SNIPE";
             bindings = <
-            &none   &none           &tog_off SNIPE  &none  &none      &none        &none   &none      &none  &tog_off SNIPE     &none           &none
-            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
-            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
-            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            &none   &none           &none               &none                           &none       &none               &none   &none       &none                           &none               &none           &none
+            &none   &tog_on SNIPE   &mouse_to_default   &scroll_vertical_or_both 0 0    &mkp LCLK   &none               &none   &mkp LCLK   &scroll_vertical_or_both 0 0    &mouse_to_default   &tog_on SNIPE   &none
+            &none   &none           &mkp MB4            &mkp MB5                        &mkp RCLK   &none               &none   &mkp RCLK   &mkp MB4                        &none               &none           &none
+                    &trans          &trans              &trans                          &trans      &trans              &trans  &trans                                      &to MOUSE
             >;
         };
 
         scroll_layer {
             label = "SCROLL";
             bindings = <
-            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
-            &none   &mouse_to_default   &scroll_horizontal_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_horizontal_or_both 0 0           &mouse_to_default   &none
-            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
-            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            &none   &none           &none               &none                           &none       &none               &none   &none       &none                           &none               &none           &none
+            &none   &tog_on SNIPE   &mouse_to_default   &scroll_horizontal_or_both 0 0  &mkp LCLK   &none               &none   &mkp LCLK   &scroll_horizontal_or_both 0 0  &mouse_to_default   &tog_on SNIPE   &none
+            &none   &none           &mkp MB4            &mkp MB5                        &mkp RCLK   &none               &none   &mkp RCLK   &mkp MB4                        &none               &none           &none
+                    &trans          &trans              &trans                          &trans      &trans              &trans  &trans                                      &to MOUSE
             >;
         };
 
         horizontal_scroll_layer {
             label = "HSCROLL";
             bindings = <
-            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
-            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
-            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
-            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            &none   &none           &none               &none                           &none       &none               &none   &none       &none                           &none               &none           &none
+            &none   &tog_on SNIPE   &mouse_to_default   &scroll_horizontal_or_both 0 0  &mkp LCLK   &none               &none   &mkp LCLK   &scroll_horizontal_or_both 0 0  &mouse_to_default   &tog_on SNIPE   &none
+            &none   &none           &mkp MB4            &mkp MB5                        &mkp RCLK   &none               &none   &mkp RCLK   &mkp MB4                        &none               &none           &none
+                    &trans          &trans              &trans                          &trans      &trans              &trans  &trans                                      &to MOUSE
             >;
         };
 
         both_scroll_layer {
             label = "BSCROLL";
             bindings = <
-            &none   &none           &tog_on SNIPE  &none  &none      &none        &none   &none      &none  &tog_on SNIPE     &none           &none
-            &none   &mouse_to_default   &scroll_vertical_or_both 0 0        &mkp RCLK       &mkp LCLK  &none        &none   &mkp LCLK  &mkp RCLK       &scroll_vertical_or_both 0 0           &mouse_to_default   &none
-            &none   &none           &mouse_to_default &mkp MB5       &mkp MB4   &none        &none   &mkp MB4   &mkp MB5        &mouse_to_default   &none           &none
-            &trans  &trans  &trans  &trans  &trans                                          &trans  &trans                          &trans
+            &none   &none           &none               &none                           &none       &none               &none   &none       &none                           &none               &none           &none
+            &none   &tog_on SNIPE   &mouse_to_default   &scroll_horizontal_or_both 0 0  &mkp LCLK   &none               &none   &mkp LCLK   &scroll_horizontal_or_both 0 0  &mouse_to_default   &tog_on SNIPE   &none
+            &none   &none           &mkp MB4            &mkp MB5                        &mkp RCLK   &none               &none   &mkp RCLK   &mkp MB4                        &none               &none           &none
+                    &trans          &trans              &trans                          &trans      &trans              &trans  &trans                                      &to MOUSE
             >;
         };
 
