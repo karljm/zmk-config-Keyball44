@@ -63,6 +63,22 @@
 
 / {
   input_processors {
+    trackball_x_scale: trackball_x_scale {
+      compatible = "zmk,input-processor-scaler";
+      #input-processor-cells = <2>;
+      type = <INPUT_EV_REL>;
+      codes = <INPUT_REL_X>;
+      track-remainders;
+    };
+
+    trackball_y_scale: trackball_y_scale {
+      compatible = "zmk,input-processor-scaler";
+      #input-processor-cells = <2>;
+      type = <INPUT_EV_REL>;
+      codes = <INPUT_REL_Y>;
+      track-remainders;
+    };
+
     hscroll_zero: hscroll_zero {
       compatible = "zmk,input-processor-scaler";
       #input-processor-cells = <2>;
@@ -81,6 +97,7 @@
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
+    input-processors = <&trackball_x_scale 1 1>, <&trackball_y_scale 3 4>;
 
     horizontal_scroll {
       layers = <7>;
