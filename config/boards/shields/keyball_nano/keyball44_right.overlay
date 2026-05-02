@@ -97,7 +97,7 @@
   trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
-    input-processors = <&trackball_x_scale 1 1>, <&trackball_y_scale 3 4>;
+    input-processors = <&trackball_x_scale 1 1>, <&trackball_y_scale 1 2>;
 
     horizontal_scroll {
       layers = <7>;
