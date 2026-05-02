@@ -107,6 +107,14 @@
             slow-release;
         };
 
+        combo_scroll_hold {
+            timeout-ms = <50>;
+            key-positions = <14 16>;
+            bindings = <&mo SCROLL>;
+            layers = <0>;
+            slow-release;
+        };
+
         combo_scroll {
             timeout-ms = <50>;
             key-positions = <38 15>;
@@ -119,6 +127,14 @@
             timeout-ms = <50>;
             key-positions = <38 26>;
             bindings = <&tog_on HSCROLL>;
+            layers = <0>;
+            slow-release;
+        };
+
+        combo_snipe_hold {
+            timeout-ms = <50>;
+            key-positions = <13 16>;
+            bindings = <&mo SNIPE>;
             layers = <0>;
             slow-release;
         };
@@ -220,7 +236,7 @@
         };
         combo_less_than {
             timeout-ms = <30>;
-            key-positions = <26 27>;
+            key-positions = <26 28>;
             bindings = <&kp LT>;
             layers = <0>;
         };

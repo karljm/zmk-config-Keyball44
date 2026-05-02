@@ -23,8 +23,8 @@
 | 2 | FUN | From NUM: position 12 or 23 |
 | 3 | EDIT | Hold position 39 or 42 |
 | 4 | MOUSE | `&to MOUSE`, combo 38 + 28 |
-| 5 | SNIPE | Combo 38 + 37, or toggles from mouse layers |
-| 6 | SCROLL | Hold position 40, combo 38 + 15, mouse-layer scroll key |
+| 5 | SNIPE | Hold combo 13 + 16, combo 38 + 37, or toggles from mouse layers |
+| 6 | SCROLL | Hold position 40, hold combo 14 + 16, combo 38 + 15, mouse-layer scroll key |
 | 7 | HSCROLL | Combo 38 + 26 |
 | 8 | BSCROLL | Hold scroll selector |
 | 9 | SETTING | Combo 42 + 43 |
@@ -219,8 +219,10 @@ Combos with `layers = <0>` are active on DEFAULT only.
 | Bootloader R | 30 + 31 + 32 + 33 + 41 | Bootloader |
 | SETTING | 42 + 43 | Momentary SETTING |
 | MOUSE | 38 + 28 | Momentary MOUSE |
+| SCROLL hold | 14 + 16 | Momentary SCROLL |
 | SCROLL | 38 + 15 | Toggle SCROLL on |
 | HSCROLL | 38 + 26 | Toggle HSCROLL on |
+| SNIPE hold | 13 + 16 | Momentary SNIPE |
 | SNIPE | 38 + 37 | Momentary SNIPE |
 
 ### Modifier Combos
