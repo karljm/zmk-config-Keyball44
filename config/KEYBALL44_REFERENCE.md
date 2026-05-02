@@ -1,6 +1,6 @@
-# KEYBALL44 ZMK Firmware Visual Reference
+# KEYBALL44 ZMK Firmware Reference
 
-## Physical Layout (44 keys + trackball)
+## Physical Layout
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
@@ -14,98 +14,70 @@
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
----
+## Layers
 
-## LAYERS
+| ID | Label | Access |
+|----|-------|--------|
+| 0 | DEFAULT / QWRT | Base layer |
+| 1 | NUM | Hold position 38 |
+| 2 | FUN | From NUM: position 12 or 23 |
+| 3 | EDIT | Hold position 39 or 42 |
+| 4 | MOUSE | `&to MOUSE`, combo 38 + 28 |
+| 5 | SNIPE | Combo 38 + 37, or toggles from mouse layers |
+| 6 | SCROLL | Hold position 40, combo 38 + 15, mouse-layer scroll key |
+| 7 | HSCROLL | Combo 38 + 26 |
+| 8 | BSCROLL | Hold scroll selector |
+| 9 | SETTING | Combo 42 + 43 |
+| 10 | SWITCH | Internal app-switching layer |
+| 11 | OPTIONS | Hold position 0 or 11 |
 
 ### DEFAULT Layer (QWRT)
 
 ```
-┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│ESC│ B │ L │ D │ W │ Z │               │   │ F │ O │ U │ J │BSP│
-│OPT│   │   │   │   │   │               │   │   │   │   │   │OPT│
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│ / │ N │ R │ T │ S │ G │               │ Y │ H │ A │ E │ I │ ' │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│CTN│ / │ X │ M │ C │ V │               │ K │ P │ . │ , │ ; │SFT│
-└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │GUI│GUN│   │NUM│SPC│TAB│       │   │EDT│   │   ●   │MOU│
-    │   │   │   │   │EDT│SCR│       │   │   │   │       │   │
-    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
+┌────┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬────┐
+│OPT │ B │ L │ D │ W │ ! │               │ ? │ F │ O │ U │ J │OPT │
+├────┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼────┤
+│ /  │ N │ R │ T │ S │ G │               │ Y │ H │ A │ E │ I │    │
+├────┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼────┤
+│CTN │ Q │ X │ M │ C │ V │               │ K │ P │ . │ , │ ; │SFT │
+└────┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼────┘
+     │ATN│GUN│   │NUM│SPC│TAB│       │   │EDT│   │   ●   │MOU│
+     │   │   │   │   │EDT│SCR│       │   │   │   │       │   │
+     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-**Thumb Keys:**
-| Position | Key | Tap | Hold |
-|----------|-----|-----|------|
-| 36 | Left outer | GUI | - |
-| 37 | Left outer 2 | GUI next | - |
-| 38 | Left middle | - | NUM layer |
-| 39 | Left inner | Space | EDIT layer |
-| 40 | Left inner 2 | Tab | SCROLL layer |
-| 41 | Right outer | - | - |
-| 42 | Right inner | - | EDIT layer |
-| 43 | Far right | - | TO MOUSE |
-
-**Outer Column Keys:**
-| Position | Key |
-|----------|-----|
-| Top left | Escape / OPTIONS layer |
-| Home left | Slash |
-| Bottom left | Ctrl next |
-| Top right | Backspace / OPTIONS layer |
-| Home right | Single Quote |
-| Bottom right | Right Shift |
-
----
+| Position | Binding |
+|----------|---------|
+| 0, 11 | Hold OPTIONS |
+| 12 | `/` |
+| 23, 41 | None |
+| 24 | Ctrl next app/tab macro |
+| 35 | Right Shift |
+| 36 | Alt next app/tab macro |
+| 37 | GUI next app/tab macro |
+| 38 | Hold NUM, clears NUM/FUN on release |
+| 39 | Space / hold EDIT |
+| 40 | Hold SCROLL |
+| 42 | Hold EDIT, clears mouse/scroll toggles on release |
+| 43 | To MOUSE |
 
 ### NUM Layer
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│   │ 1 │ 2 │ 3 │ 4 │ 5 │               │ 6 │ 7 │ 8 │ 9 │ 0 │   │
+│   │   │ 9 │ 8 │ 7 │   │               │   │ 7 │ 8 │ 9 │   │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │ 7 │ 8 │ 9 │   │               │   │ 9 │ 8 │ 7 │   │   │
+│FUN│ 0 │ 3 │ 2 │ 1 │   │               │   │ 1 │ 2 │ 3 │ 0 │FUN│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│FUN│ 0 │ 1 │ 2 │ 3 │   │               │   │ 3 │ 2 │ 1 │ 0 │FUN│
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │ 4 │ 5 │ 6 │   │               │   │ 6 │ 5 │ 4 │   │   │
+│   │   │ 6 │ 5 │ 4 │   │               │   │ 4 │ 5 │ 6 │   │   │
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
     │   │   │   │   │   │   │       │   │   │   │   ●   │   │
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-**Access:** Hold position 38. Releasing the NUM hold clears both NUM and FUN.
+Positions 12 and 23 toggle FUN on. Releasing the NUM hold clears both NUM and FUN.
 
-**FUN access from NUM:** Press position 12 or 23 while on NUM.
-
----
-
-### EDIT Layer (hold key 39 or key 42)
-
-```
-┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│   │   │   │   │   │   │               │   │   │   │   │   │   │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │ESC│   │   │ENT│               │   │BSP│DEL│   │   │   │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │   │SCR│MOU│   │               │   │   │   │   │   │   │
-└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
-    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
-```
-
-| Position | Output |
-|----------|--------|
-| 14 | Escape |
-| 17 | Enter |
-| 19 | Backspace |
-| 20 | Delete |
-| 27 | Scroll layer |
-| 28 | Mouse layer |
-
----
-
-### FUN Layer (from NUM position 12 or 23)
+### FUN Layer
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
@@ -119,80 +91,66 @@
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
----
-
-### MOUSE Layer (hold left thumb inner)
+### EDIT Layer
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│   │ 1 │ 2 │ 3 │ 4 │ 5 │               │ 6 │ 7 │ 8 │ 9 │ 0 │TO0│
+│   │   │   │   │   │   │               │   │   │   │   │   │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │ ← │ ↓ │ ↑ │ → │   │               │PGU│LC │SCR│RC │MC │   │
+│   │SFT│ESC│TAB│ENT│   │               │   │BSP│DEL│   │SFT│   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │   │   │   │   │               │PGD│MB4│   │MB5│   │   │
+│   │CTL│GUI│ALT│SFT│   │               │ <-│ v │ ^ │ ->│   │   │
+└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
+    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
+    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
+```
+
+`SFT`, `CTL`, `GUI`, and `ALT` are sticky modifiers.
+
+### MOUSE / SNIPE Layers
+
+MOUSE and SNIPE currently share the same key bindings. SNIPE changes trackball CPI through the PMW3610 driver.
+
+```
+┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
+│   │   │   │MC │   │   │               │   │   │MC │   │   │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│   │SNP│TO0│SCR│LC │   │               │   │LC │SCR│TO0│SNP│   │
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│   │   │MB4│MB5│RC │   │               │   │RC │MB4│   │   │   │
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
     │   │   │   │   │   │   │       │   │   │   │   ●   │MOU│
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-| Key | Description |
-|-----|-------------|
-| LC | Left Click |
-| RC | Right Click |
-| MC | Middle Click |
-| MB4 | Mouse Button 4 (Back) |
-| MB5 | Mouse Button 5 (Forward) |
-| SCR | Momentary SCROLL layer |
-| PGU | Page Up |
-| PGD | Page Down |
-| TO0 | Return to DEFAULT layer |
+| Label | Output |
+|-------|--------|
+| LC / RC / MC | Left / right / middle click |
+| MB4 / MB5 | Mouse button 4 / 5 |
+| SCR | Tap vertical scroll mode, hold both-axis scroll |
+| SNP | Toggle SNIPE on |
+| TO0 | Clear mouse/scroll/snipe layers and return to DEFAULT |
+| MOU | Stay on MOUSE |
 
----
+### SCROLL / HSCROLL / BSCROLL Layers
 
-### SCROLL Layer (hold left thumb inner 2)
+SCROLL, HSCROLL, and BSCROLL currently share the same key bindings. Trackball behavior differs by active layer.
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│BOT│   │   │   │   │   │               │   │   │   │   │   │BOT│
+│   │   │   │MC │   │   │               │   │   │MC │   │   │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│RST│   │   │   │   │   │               │   │   │   │   │   │RST│
+│   │SNP│TO0│HSC│LC │   │               │   │LC │HSC│TO0│SNP│   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│EPO│   │   │   │   │   │               │   │   │   │   │   │EPN│
+│   │   │MB4│MB5│RC │   │               │   │RC │MB4│   │   │   │
 └───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
+    │   │   │   │   │   │   │       │   │   │   │   ●   │MOU│
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-| Key | Description |
-|-----|-------------|
-| BOT | Bootloader |
-| RST | System Reset |
-| EPO | External Power Off |
-| EPN | External Power On |
+`HSC` taps horizontal scroll mode and holds both-axis scroll.
 
-**Note:** This layer controls trackball scroll mode when held.
-
----
-
-### SNIPE Layer
-
-```
-┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│   │   │   │   │   │   │               │   │   │   │   │   │   │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │   │   │   │   │               │   │   │   │   │   │   │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│   │   │   │   │   │   │               │   │   │   │   │   │   │
-└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
-    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
-```
-
-**Note:** All transparent - currently unused. Intended for precision trackball movement.
-
----
-
-### SETTING Layer (combo access)
+### SETTING Layer
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
@@ -206,22 +164,29 @@
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-| Key | Description |
-|-----|-------------|
-| CLR | Clear Bluetooth bonds |
-| BT0 | Select Bluetooth profile 0 |
-| BT1 | Select Bluetooth profile 1 |
-| BT2 | Select Bluetooth profile 2 |
+### SWITCH Layer
 
-**Access:** Combo keys 42 + 43 (right thumb keys)
-
----
-
-### OPTIONS Layer (hold key 0 or key 11)
+Used internally by app-switching macros.
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│BOT│   │   │   │   │   │               │   │   │   │   │   │BOT│
+│   │   │   │   │   │   │               │   │   │   │   │   │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│   │   │ESC│PVT│TAB│   │               │   │TAB│PVT│ESC│   │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
+│   │   │ESC│PVT│TAB│   │               │   │TAB│PVT│ESC│   │   │
+└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
+    │   │   │   │   │   │   │       │   │   │   │   ●   │   │
+    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
+```
+
+`PVT` is Shift+Tab.
+
+### OPTIONS Layer
+
+```
+┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
+│   │   │   │   │   │BOT│               │BOT│   │   │   │   │   │
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
 │RST│CLR│BT0│BT1│BT2│   │               │   │   │   │   │   │RST│
 ├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
@@ -231,183 +196,185 @@
     └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
 ```
 
-| Key | Description |
-|-----|-------------|
+| Label | Output |
+|-------|--------|
 | BOT | Bootloader |
-| RST | System Reset |
-| EPO | External Power Off |
-| EPN | External Power On |
+| RST | System reset |
+| EPO / EPN | External power off / on |
 | CLR | Clear Bluetooth bonds |
 | BT0-BT2 | Select Bluetooth profile |
 
----
+## Combos
 
-## COMBOS
+Combos with `layers = <0>` are active on DEFAULT only.
 
-### Key Position Reference
+### Layer / System Combos
+
+| Name | Positions | Output |
+|------|-----------|--------|
+| To Default | 19 + 20 + 21 | `&to 0` |
+| Escape | 19 + 20 | Escape |
+| Z | 3 + 4 | Z |
+| Bootloader L | 26 + 27 + 28 + 29 + 40 | Bootloader |
+| Bootloader R | 30 + 31 + 32 + 33 + 41 | Bootloader |
+| SETTING | 42 + 43 | Momentary SETTING |
+| MOUSE | 38 + 28 | Momentary MOUSE |
+| SCROLL | 38 + 15 | Toggle SCROLL on |
+| HSCROLL | 38 + 26 | Toggle HSCROLL on |
+| SNIPE | 38 + 37 | Momentary SNIPE |
+
+### Modifier Combos
+
+| Modifier | Positions | Output |
+|----------|-----------|--------|
+| Left GUI | 39 + 14 | Sticky quick-release LGUI |
+| Left Shift | 39 + 16 | Sticky quick-release Left Shift |
+| Left Ctrl | 39 + 13 | Sticky quick-release LCTRL |
+| Left Alt | 39 + 15 | Sticky quick-release LALT |
+| Right GUI | 42 + 21 | Sticky quick-release RGUI |
+| Right Shift | 42 + 19 | Sticky quick-release Right Shift |
+| Right Ctrl | 42 + 22 | Sticky quick-release RCTRL |
+| Right Alt | 42 + 20 | Sticky quick-release RALT |
+
+### Switching Combos
+
+| Action | Positions | Output |
+|--------|-----------|--------|
+| GUI next | 14 + 16 + 39 | GUI + Tab |
+| Ctrl next | 13 + 16 + 39 | Ctrl + Tab |
+| Alt next | 26 + 28 + 39 | Alt + Tab |
+| Alt next | 32 + 28 | Alt + Tab |
+| Alt previous | 32 + 27 | Alt + Shift+Tab |
+| Ctrl next | 31 + 28 | Ctrl + Tab |
+| Ctrl previous | 31 + 27 | Ctrl + Shift+Tab |
+| GUI next | 33 + 28 | GUI + Tab |
+| GUI previous | 33 + 27 | GUI + Shift+Tab |
+
+### Symbol Combos
+
+| Symbol | Positions |
+|--------|-----------|
+| `[` | 7 + 9 |
+| `]` | 7 + 10 |
+| `(` | 19 + 21 |
+| `)` | 19 + 22 |
+| `{` | 31 + 33 |
+| `}` | 31 + 34 |
+| `+` | 27 + 28 |
+| `-` | 26 + 27 |
+| `*` | 25 + 28 |
+| `%` | 26 + 28 |
+| `=` | 31 + 32 |
+| `_` | 32 + 33 |
+| `'` | 20 + 21 |
+| `"` | 8 + 9 |
+| `#` | 39 + 2 |
+| `~` | 39 + 3 |
+| `` ` `` | 39 + 9 |
+| `\` | 39 + 25 |
+| `<` | 39 + 27 |
+| `>` | 39 + 28 |
+| `|` | 42 + 7 |
+| `&` | 42 + 8 |
+| `^` | 42 + 31 |
+| `$` | 42 + 32 |
+| `:` | 42 + 33 |
+| `@` | 42 + 34 |
+
+### Thumb Symbol Combo Diagram
+
+Hold/tap the thumb shown as `TH` with the marked key to output the symbol in that key position.
+
+Left thumb symbols use position 39:
 
 ```
-┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
-│ 0 │ 1 │ 2 │ 3 │ 4 │ 5 │               │ 6 │ 7 │ 8 │ 9 │10 │11 │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│12 │13 │14 │15 │16 │17 │               │18 │19 │20 │21 │22 │23 │
-├───┼───┼───┼───┼───┼───┤               ├───┼───┼───┼───┼───┼───┤
-│24 │25 │26 │27 │28 │29 │               │30 │31 │32 │33 │34 │35 │
-└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼───┼───┴───┼───┼───┘
-    │36 │37 │   │38 │39 │40 │       │41 │42 │   │   ●   │43 │
-    └───┴───┘   └───┴───┴───┘       └───┴───┘   └───────┴───┘
+┌───┬────┬────┬────┬───┬───┐               ┌───┬───┬───┬────┬───┬───┐
+│   │    │ #  │ ~  │   │   │               │   │   │   │ `  │   │   │
+├───┼────┼────┼────┼───┼───┤               ├───┼───┼───┼────┼───┼───┤
+│   │    │    │    │   │   │               │   │   │   │    │   │   │
+├───┼────┼────┼────┼───┼───┤               ├───┼───┼───┼────┼───┼───┤
+│   │ \\ │    │ <  │ > │   │               │   │   │   │    │   │   │
+└───┼────┼────┼────┼───┼───┼───┐       ┌───┼───┼───┼────┴───┼───┼───┘
+    │   │    │    │   │TH │   │       │   │   │   │   ●    │   │
+    └───┴────┘    └───┴───┴───┘       └───┴───┘   └────────┴───┘
 ```
 
-### Modifier Combos (Left Hand)
+Right thumb symbols use position 42:
 
-| Combo | Keys | Positions | Output |
-|-------|------|-----------|--------|
-| Left Ctrl | TH2 + N | 39 + 13 | Left Ctrl |
-| Left GUI | TH2 + R | 39 + 14 | Left GUI |
-| Left Alt | TH2 + T | 39 + 15 | Left Alt |
-| Left Shift | TH2 + S | 39 + 16 | Left Shift |
+```
+┌───┬───┬───┬───┬───┬───┐               ┌───┬────┬────┬───┬───┬───┐
+│   │   │   │   │   │   │               │   │ |  │ &  │   │   │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼────┼────┼───┼───┼───┤
+│   │   │   │   │   │   │               │   │    │    │   │   │   │
+├───┼───┼───┼───┼───┼───┤               ├───┼────┼────┼───┼───┼───┤
+│   │   │   │   │   │   │               │   │ ^  │ $  │ : │ @ │   │
+└───┼───┼───┼───┼───┼───┼───┐       ┌───┼───┼────┼────┴───┼───┼───┘
+    │   │   │   │   │   │   │       │   │TH │    │   ●   │   │
+    └───┴───┘   └───┴───┴───┘       └───┴───┘    └───────┴───┘
+```
 
-### Modifier Combos (Right Hand)
+| Thumb | Symbol | Combo Positions |
+|-------|--------|-----------------|
+| 39 | `#` | 39 + 2 |
+| 39 | `~` | 39 + 3 |
+| 39 | `` ` `` | 39 + 9 |
+| 39 | `\` | 39 + 25 |
+| 39 | `<` | 39 + 27 |
+| 39 | `>` | 39 + 28 |
+| 42 | `|` | 42 + 7 |
+| 42 | `&` | 42 + 8 |
+| 42 | `^` | 42 + 31 |
+| 42 | `$` | 42 + 32 |
+| 42 | `:` | 42 + 33 |
+| 42 | `@` | 42 + 34 |
 
-| Combo | Keys | Positions | Output |
-|-------|------|-----------|--------|
-| Right Shift | TH5 + H | 42 + 19 | Right Shift |
-| Right Alt | TH5 + A | 42 + 20 | Right Alt |
-| Right GUI | TH5 + E | 42 + 21 | Right GUI |
-| Right Ctrl | TH5 + I | 42 + 22 | Right Ctrl |
+## Trackball
 
-### Navigation Combos
+| Setting | Value |
+|---------|-------|
+| CPI | 2400 |
+| CPI divisor | 2 |
+| SNIPE CPI | 800 |
+| SNIPE divisor | 4 |
+| Scroll tick | 32 |
+| Automouse layer | MOUSE / layer 4 |
+| Scroll layers | SCROLL, HSCROLL, BSCROLL |
+| SNIPE layer | SNIPE / layer 5 |
+| Normal X scale | 1/1 |
+| Normal Y scale | 3/4 |
 
-| Combo | Keys | Positions | Output |
-|-------|------|-----------|--------|
-| Enter | R + S | 14 + 16 | Enter |
-| To Default | H + A + E | 19 + 20 + 21 | TO layer 0 |
+Scroll layer overrides zero the unused wheel axis with input processors.
 
-### Switch Combos
+## Custom Behaviors
 
-| Combo | Keys | Positions | Output |
-|-------|------|-----------|--------|
-| GUI next | TH2 + N + S | 39 + 13 + 16 | GUI held, Tab tapped, SWITCH layer held |
-| GUI previous | TH2 + N + T | 39 + 13 + 15 | GUI held, Shift+Tab tapped, SWITCH layer held |
-| Ctrl next | TH2 + R + S | 39 + 14 + 16 | Ctrl held, Tab tapped, SWITCH layer held |
-| Ctrl previous | TH2 + R + T | 39 + 14 + 15 | Ctrl held, Shift+Tab tapped, SWITCH layer held |
-| Alt next | TH2 + / + S | 39 + 12 + 16 | Alt held, Tab tapped, SWITCH layer held |
-| Alt previous | TH2 + / + T | 39 + 12 + 15 | Alt held, Shift+Tab tapped, SWITCH layer held |
+| Behavior | Purpose |
+|----------|---------|
+| `edit_hold_cleanup` | Holds EDIT, then clears mouse/scroll toggles on release |
+| `num_hold_cleanup` | Holds NUM, then clears FUN and NUM on release |
+| `mouse_to_default` | Clears mouse/scroll/snipe layers and returns to DEFAULT |
+| `scroll_vertical_or_both` | Tap vertical scroll, hold BSCROLL |
+| `scroll_horizontal_or_both` | Tap horizontal scroll, hold BSCROLL |
+| `skq` | Sticky key with quick release |
+| `tog_on` / `tog_off` | Toggle-layer helpers forced on/off |
 
-### System Combos
+### Mod-Morphs
 
-| Combo | Keys | Positions | Output |
-|-------|------|-----------|--------|
-| Bootloader L | X + M + C + V + Tab | 26 + 27 + 28 + 29 + 40 | Bootloader |
-| Bootloader R | K + P + . + , + right outer thumb | 30 + 31 + 32 + 33 + 41 | Bootloader on central half |
-| Setting Layer | Thumb keys | 42 + 43 | Momentary SETTING |
+Defined but not used on the base layer:
 
-**Bootloader note:** ZMK combo reset behaviors run on the central half of a split keyboard. For source-specific bootloader access, hold `SCROLL` and press a `BOT` key on the half you want to flash.
-
----
-
-## CUSTOM BEHAVIORS
-
-### Mod-Morphs (defined but not used on base layer)
-
-| Behavior | Tap | Shift+Tap |
-|----------|-----|-----------|
-| cmqus | , | ? |
-| dtsmi | . | ; |
+| Behavior | Normal | Shifted |
+|----------|--------|---------|
+| `cmqus` | `,` | `?` |
+| `dtsmi` | `.` | `;` |
 
 ### Caps Word
 
-Enabled with configuration:
-- Continues with: `UNDERSCORE`, `MINUS`
-- Deactivates on: space, punctuation, etc.
+Caps Word is configured to continue through `UNDERSCORE` and `MINUS`, but no key currently invokes `&caps_word`.
 
-**Access:** Currently no key assigned. Add `&caps_word` to use.
+## Timing
 
----
-
-## HOLD-TAP SETTINGS
-
-### Layer-Tap (&lt)
-
-| Setting | Value |
-|---------|-------|
-| Tapping term | 240ms |
-| Flavor | Balanced |
-| Quick tap | 150ms |
-
-### Mod-Tap (&mt)
-
-| Setting | Value |
-|---------|-------|
-| Tapping term | 200ms |
-| Flavor | Tap-preferred |
-| Quick tap | 150ms |
-
----
-
-## LAYER ACCESS SUMMARY
-
-| Layer | Access Method |
-|-------|---------------|
-| DEFAULT | Base layer / TO 0 |
-| NUM | Hold key 38 |
-| FUN | From NUM: key 12 or key 23 |
-| MOUSE | TO MOUSE |
-| SCROLL | Hold left thumb inner 2 (key 40) / From MOUSE layer |
-| SNIPE | No direct access |
-| SETTING | Combo: keys 42 + 43 |
-| EDIT | Hold key 39 or key 42 |
-| OPTIONS | Hold key 0 or key 11 |
-
----
-
-## ISSUES / TODO
-
-### Missing Features
-
-- [ ] No repeat key
-- [ ] No caps word key assigned
-- [ ] SNIPE layer is empty
-- [ ] Mod-morph behaviors defined but not used
-
-### Potential Improvements
-
-1. Add `&key_repeat` to a thumb key
-2. Add `&caps_word` access
-3. Add one-shot modifiers (`&sk`) to combos
-4. Populate SNIPE layer for precision trackball
-5. Add navigation combos (word jump, home/end)
-
----
-
-## QUICK REFERENCE
-
-### Most Used Keys
-
-| Action | Location |
-|--------|----------|
-| GUI next | Left outer 2 |
-| Ctrl next | Left bottom outer |
-| Space | Left thumb inner (tap) |
-| Enter | R + S combo or EDIT layer position 17 |
-| Backspace | Top right or EDIT layer position 19 |
-| Escape | Top left or EDIT layer position 14 |
-| Tab | Left thumb inner 2 tap |
-
-### Layer Access
-
-| Layer | Hold Key |
-|-------|----------|
-| OPTIONS | Escape or Backspace |
-| EDIT | Left thumb Space or right thumb inner |
-| FUN | From NUM: key 12 or key 23 |
-| SCROLL | Left thumb Tab |
-
-### Quick Modifiers (Combos)
-
-| Modifier | Left Hand | Right Hand |
-|----------|-----------|------------|
-| Shift | TH2 + S | TH5 + H |
-| Ctrl | TH2 + N | TH5 + I |
-| Alt | TH2 + T | TH5 + A |
-| GUI | TH2 + R | TH5 + E |
+| Behavior | Tapping term | Flavor | Quick tap |
+|----------|--------------|--------|-----------|
+| `&lt` | 240ms | balanced | 150ms |
+| `&mt` | 200ms | tap-preferred | 150ms |
+| `edit_lt` | 240ms | balanced | 150ms |
+| scroll hold-taps | 240ms | balanced | 150ms |
