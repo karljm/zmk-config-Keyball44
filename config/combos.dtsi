@@ -7,6 +7,20 @@
             bindings = <&to 0>;
         };
 
+        combo_hold_snipe {
+            timeout-ms = <25>;
+            key-positions = <36 38>;
+            bindings = <&mo SNIPE>;
+            layers = <0>;
+        };
+
+        combo_hold_scroll {
+            timeout-ms = <25>;
+            key-positions = <37 38>;
+            bindings = <&mo SCROLL>;
+            layers = <0>;
+        };
+
         combo_esc {
             timeout-ms = <25>;
             key-positions = <19 20>;
@@ -383,7 +397,7 @@
         };
         combo_under {
             timeout-ms = <30>;
-            key-positions = <42 33>;
+            key-positions = <42 32>;
             bindings = <&kp UNDER>;
             layers = <0>;
         };
