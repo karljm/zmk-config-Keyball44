@@ -49,10 +49,10 @@
         number_layer {
             label = "NUM";
             bindings = <
-                &trans        &none         &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none         &none   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &trans
-                &tog_on FUN   &kp NUMBER_0  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &none         &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &tog_on FUN
-                &none         &none         &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none         &none   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none         &none
-                              &trans        &trans        &trans        &trans        &trans        &trans  &trans                                    &trans
+                &trans        &none         &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none         &none   &kp ASTRK      &kp FSLH        &kp PRCNT      &none         &trans
+                &none         &none         &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none         &none   &kp PLUS       &kp MINUS       &none          &none         &none
+                &tog_on FUN   &kp NUMBER_0  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &none         &none   &kp EQUAL      &kp DOT         &none          &none         &tog_on FUN
+                              &trans        &trans        &trans        &trans        &trans        &trans  &trans                                        &trans
             >;
         };
 
@@ -60,8 +60,8 @@
             label = "FUN";
             bindings = <
                 &trans    &kp F12  &kp F9   &kp F8  &kp F7  &none    &none     &kp F7  &kp F8  &kp F9  &kp F12  &trans
-                &trans    &kp F10  &kp F3   &kp F2  &kp F1  &none    &none     &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                &none     &kp F11  &kp F6   &kp F5  &kp F4  &none    &none     &kp F4  &kp F5  &kp F6  &kp F11  &none
+                &trans    &kp F11  &kp F6   &kp F5  &kp F4  &none    &none     &kp F4  &kp F5  &kp F6  &kp F11  &trans
+                &none     &kp F10  &kp F3   &kp F2  &kp F1  &none    &none     &kp F1  &kp F2  &kp F3  &kp F10  &none
                           &trans   &trans   &trans  &trans  &trans   &trans    &trans                  &trans
             >;
         };
