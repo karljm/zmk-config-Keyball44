@@ -49,8 +49,8 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-                &none  &none      &kp TILDE  &kp PRCNT  &kp ASTRK  &none     /**/  &none     &kp LBRC   &kp BSLH   &kp RBRC   &none     &none
-                &none  &kp GRAVE  &kp CARET  &kp MINUS  &kp PLUS   &kp DLLR  /**/  &kp HASH  &kp LPAR   &kp LBKT   &kp RPAR   &kp RBKT  &none
+                &none  &none      &kp TILDE  &kp PRCNT  &kp ASTRK  &none     /**/  &none     &kp LBKT   &kp BSLH   &kp RBKT   &none     &none
+                &none  &kp GRAVE  &kp CARET  &kp MINUS  &kp PLUS   &kp DLLR  /**/  &kp HASH  &kp LPAR   &kp LBRC   &kp RPAR   &kp RBRC  &none
                 &none  &kp PIPE   &kp AMPS   &kp LT     &kp GT     &kp DQT   /**/  &kp SQT   &kp EQUAL  &kp UNDER  &kp COLON  &kp AT    &none
                        &trans     &trans     &trans     &trans     &trans    /**/  &trans    &trans                           &trans
             >;
