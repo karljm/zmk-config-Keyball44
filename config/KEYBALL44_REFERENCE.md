@@ -18,7 +18,7 @@
 
 | ID | Label | Access |
 |----|-------|--------|
-| 0 | DEFAULT / QWRT | Base layer |
+| 0 | DEFAULT / BASE | Base layer |
 | 1 | NUM | Hold position 38 |
 | 2 | FUN | From NUM: position 12 or 23 |
 | 3 | EDIT | Hold position 39 or 42 |
@@ -29,7 +29,7 @@
 | 8 | SWITCH | Internal app-switching layer |
 | 9 | OPTIONS | Hold position 0 or 11 |
 
-### DEFAULT Layer (QWRT)
+### DEFAULT Layer (BASE)
 
 ```
 ┌────┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬────┐

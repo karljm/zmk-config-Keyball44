@@ -28,6 +28,32 @@
                 ;
         };
 
+        sw_gui_grave: switch_gui_grave {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <20>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+
+        sw_gui_grave_prev: switch_gui_grave_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <20>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHIFT>
+                , <&macro_tap &kp GRAVE>
+                , <&macro_release &kp LSHIFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+
         sw_ctl_next: switch_ctl_next {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -130,6 +156,14 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &tog_off VSCROLL &tog_on HSCROLL>
+                ;
+        };
+
+        scroll_to_edit: scroll_to_edit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &tog_off HSCROLL &tog_off VSCROLL>
                 ;
         };
 

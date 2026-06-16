@@ -1,13 +1,14 @@
 #define DEFAULT 0
-#define NUM     1
-#define FUN     2
-#define EDIT    3
-#define SNIPE   4
-#define VSCROLL 5
-#define HSCROLL 6
-#define SETTING 7
-#define SWITCH  8
-#define OPTIONS 9
+#define SYM     1
+#define NUM     2
+#define FUN     3
+#define EDIT    4
+#define SNIPE   5
+#define VSCROLL 6
+#define HSCROLL 7
+#define SETTING 8
+#define SWITCH  9
+#define OPTIONS 10
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -35,22 +36,32 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "QWRT";
+            label = "BASE";
             bindings = <
                 &mo OPTIONS  &kp B     &kp L     &kp D              &kp W                 &kp EXCL      /**/  &kp QUESTION  &kp F                &kp O    &kp U        &kp J       &mo OPTIONS
                 &kp FSLH     &kp N     &kp R     &kp T              &kp S                 &kp G         /**/  &kp Y         &kp H                &kp A    &kp E        &kp I       &none
                 &none        &kp Q     &kp X     &kp M              &kp C                 &kp V         /**/  &kp K         &kp P                &kp DOT  &kp COMMA    &kp SEMI    &kp RIGHT_SHIFT
-                             &mkp MB2  &mkp MB1  &num_hold_cleanup  &edit_lt EDIT SPACE   &mo VSCROLL   /**/  &none         &edit_lt EDIT SPACE                        &none
+                             &mkp MB2  &mkp MB1  &num_hold_cleanup  &edit_lt EDIT SPACE   &mo SYM       /**/  &mo SYM       &edit_lt EDIT SPACE                        &none
+            >;
+        };
+
+        symbol_layer {
+            label = "SYM";
+            bindings = <
+                &none  &kp GRAVE  &kp TILDE  &kp PRCNT  &kp ASTRK  &none    /**/  &none    &kp LBRC   &kp CARET  &kp RBRC   &kp DLLR  &none
+                &none  &kp PIPE   &kp AMPS   &kp MINUS  &kp PLUS   &none    /**/  &none    &kp LPAR   &kp LBKT   &kp RPAR   &kp RBKT  &none
+                &none  &kp BSLH   &kp HASH   &kp LT     &kp GT     &kp DQT  /**/  &kp SQT  &kp EQUAL  &kp UNDER  &kp COLON  &kp AT    &none
+                       &trans     &trans     &trans     &trans     &trans   /**/  &trans   &trans                           &trans
             >;
         };
 
         number_layer {
             label = "NUM";
             bindings = <
-                &trans        &none         &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &none   /**/  &none   &kp ASTRK      &kp FSLH        &kp PRCNT      &none         &trans
-                &none         &none         &kp NUMBER_6  &kp NUMBER_5  &kp NUMBER_4  &none   /**/  &none   &kp PLUS       &kp MINUS       &none          &none         &none
-                &tog_on FUN   &kp NUMBER_0  &kp NUMBER_3  &kp NUMBER_2  &kp NUMBER_1  &none   /**/  &none   &kp EQUAL      &kp DOT         &none          &none         &tog_on FUN
-                              &trans        &trans        &trans        &trans        &trans  /**/  &trans  &trans                                        &trans
+                &trans        &none     &none      &none      &none      &none   /**/  &none   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &trans
+                &none         &kp FSLH  &kp ASTRK  &kp MINUS  &kp PLUS   &none   /**/  &none   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &none         &none
+                &tog_on FUN   &none     &kp PRCNT  &kp DOT    &kp EQUAL  &none   /**/  &none   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_0  &tog_on FUN
+                              &trans    &trans     &trans     &trans     &trans  /**/  &trans  &trans                                    &trans
             >;
         };
 
@@ -68,7 +79,7 @@
             label = "EDIT";
             bindings = <
                 &none    &kp DELETE  &kp TAB          &kp ENTER  &kp BACKSPACE  &none    /**/  &none     &kp BACKSPACE  &kp ENTER  &kp TAB    &kp DELETE     &none
-                &none    &sk LCTRL   &kp LGUI         &kp LALT   &kp LSHIFT     &none    /**/  &none     &kp LSHIFT     &kp LALT   &kp LGUI   &kp LCTRL      &none
+                &kp ESC  &sk LCTRL   &kp LGUI         &kp LALT   &kp LSHIFT     &none    /**/  &none     &kp LSHIFT     &kp LALT   &kp LGUI   &kp LCTRL      &kp ESC
                 &none    &mkp MB3    &tog_on VSCROLL  &mkp MB2   &mkp MB1       &none    /**/  &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &tog_on SNIPE  &none
                          &mkp MB4    &mkp MB5         &none      &none          &none    /**/  &none     &none                                &none
             >;
@@ -87,20 +98,20 @@
         scroll_layer {
             label = "VSCROLL";
             bindings = <
-                &none    &none  &none                &none  &none  &none  /**/  &none  &none  &none  &none  &none  &none
-                &none    &none  &none                &none  &none  &none  /**/  &none  &none  &none  &none  &none  &none
-                &none    &none  &scroll_horizontal   &none  &none  &none  /**/  &none  &none  &none  &none  &none  &none
-                         &none  &none                &none  &none  &none  /**/  &none  &none                &none
+                &none    &none            &none                &none  &none  &none  /**/  &none  &none  &none  &none  &none            &none
+                &none    &scroll_to_edit  &none                &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
+                &none    &scroll_to_edit  &scroll_horizontal   &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
+                         &none            &none                &none  &none  &none  /**/  &none  &none                &none
             >;
         };
 
         horizontal_scroll_layer {
             label = "HSCROLL";
             bindings = <
-                &none    &none  &none              &none  &none  &none  /**/  &none  &none  &none  &none  &none  &none
-                &none    &none  &none              &none  &none  &none  /**/  &none  &none  &none  &none  &none  &none
-                &none    &none  &scroll_vertical   &none  &none  &none  /**/  &none  &none  &none  &none  &none  &none
-                         &none  &none              &none  &none  &none  /**/  &none  &none                &none
+                &none    &none            &none                &none  &none  &none  /**/  &none  &none  &none  &none  &none            &none
+                &none    &scroll_to_edit  &none                &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
+                &none    &scroll_to_edit  &scroll_vertical     &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
+                         &none            &none                &none  &none  &none  /**/  &none  &none                &none
             >;
         };
 
@@ -133,5 +144,6 @@
                                    &none      &none        &none        &none        &none        /**/  &none        &none                &none
             >;
         };
+
     };
 };
