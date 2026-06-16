@@ -8,7 +8,8 @@
 #define HSCROLL 7
 #define SETTING 8
 #define SWITCH  9
-#define OPTIONS 10
+#define SWKEYS  10
+#define OPTIONS 11
 
 #include <behaviors/mouse_keys.dtsi>
 #include <behaviors.dtsi>
@@ -48,10 +49,10 @@
         symbol_layer {
             label = "SYM";
             bindings = <
-                &none  &kp GRAVE  &kp TILDE  &kp PRCNT  &kp ASTRK  &none    /**/  &none    &kp LBRC   &kp CARET  &kp RBRC   &kp DLLR  &none
-                &none  &kp PIPE   &kp AMPS   &kp MINUS  &kp PLUS   &none    /**/  &none    &kp LPAR   &kp LBKT   &kp RPAR   &kp RBKT  &none
-                &none  &kp BSLH   &kp HASH   &kp LT     &kp GT     &kp DQT  /**/  &kp SQT  &kp EQUAL  &kp UNDER  &kp COLON  &kp AT    &none
-                       &trans     &trans     &trans     &trans     &trans   /**/  &trans   &trans                           &trans
+                &none  &none      &kp TILDE  &kp PRCNT  &kp ASTRK  &none     /**/  &none     &kp LBRC   &kp BSLH   &kp RBRC   &none     &none
+                &none  &kp GRAVE  &kp CARET  &kp MINUS  &kp PLUS   &kp DLLR  /**/  &kp HASH  &kp LPAR   &kp LBKT   &kp RPAR   &kp RBKT  &none
+                &none  &kp PIPE   &kp AMPS   &kp LT     &kp GT     &kp DQT   /**/  &kp SQT   &kp EQUAL  &kp UNDER  &kp COLON  &kp AT    &none
+                       &trans     &trans     &trans     &trans     &trans    /**/  &trans    &trans                           &trans
             >;
         };
 
@@ -78,40 +79,40 @@
         edit_layer {
             label = "EDIT";
             bindings = <
-                &none    &kp DELETE  &kp TAB          &kp ENTER  &kp BACKSPACE  &none    /**/  &none     &kp BACKSPACE  &kp ENTER  &kp TAB    &kp DELETE     &none
-                &kp ESC  &sk LCTRL   &kp LGUI         &kp LALT   &kp LSHIFT     &none    /**/  &none     &kp LSHIFT     &kp LALT   &kp LGUI   &kp LCTRL      &kp ESC
-                &none    &mkp MB3    &tog_on VSCROLL  &mkp MB2   &mkp MB1       &none    /**/  &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &tog_on SNIPE  &none
-                         &mkp MB4    &mkp MB5         &none      &none          &none    /**/  &none     &none                                &none
+                &none  &kp DELETE  &kp TAB          &kp ENTER  &kp BACKSPACE  &none    /**/  &none     &kp BACKSPACE  &kp ENTER  &kp TAB    &kp DELETE     &none
+                &none  &sk LCTRL   &kp LGUI         &kp LALT   &kp LSHIFT     &kp ESC  /**/  &kp ESC   &kp LSHIFT     &kp LALT   &kp LGUI   &kp LCTRL      &none
+                &none  &mkp MB3    &tog_on VSCROLL  &mkp MB2   &mkp MB1       &none    /**/  &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &tog_on SNIPE  &none
+                       &mkp MB4    &mkp MB5         &none      &kp SPACE      &none    /**/  &none     &kp SPACE                            &none
             >;
         };
 
         snipe_layer {
             label = "SNIPE";
             bindings = <
-                &none    &kp DELETE  &kp TAB          &kp ENTER  &kp BACKSPACE  &none    /**/  &none     &kp BACKSPACE  &kp ENTER  &kp TAB    &kp DELETE      &none
-                &none    &sk LCTRL   &kp LGUI         &kp LALT   &kp LSHIFT     &none    /**/  &none     &kp LSHIFT     &kp LALT   &kp LGUI   &kp LCTRL       &none
-                &none    &mkp MB3    &tog_on VSCROLL  &mkp MB2   &mkp MB1       &none    /**/  &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &tog_off SNIPE  &none
-                         &mkp MB4    &mkp MB5         &none      &none          &none    /**/  &none     &none                                &none
+                &none  &kp DELETE  &kp TAB          &kp ENTER  &kp BACKSPACE  &none    /**/  &none     &kp BACKSPACE  &kp ENTER  &kp TAB    &kp DELETE     &none
+                &none  &kp LCTRL   &kp LGUI         &kp LALT   &kp LSHIFT     &kp ESC  /**/  &kp ESC   &kp LSHIFT     &kp LALT   &kp LGUI   &kp LCTRL      &none
+                &none  &mkp MB3    &tog_on VSCROLL  &mkp MB2   &mkp MB1       &none    /**/  &kp LEFT  &kp DOWN       &kp UP     &kp RIGHT  &tog_on SNIPE  &none
+                       &mkp MB4    &mkp MB5         &none      &kp SPACE      &none    /**/  &none     &kp SPACE                            &none
             >;
         };
 
         scroll_layer {
             label = "VSCROLL";
             bindings = <
-                &none    &none            &none                &none  &none  &none  /**/  &none  &none  &none  &none  &none            &none
-                &none    &scroll_to_edit  &none                &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
-                &none    &scroll_to_edit  &scroll_horizontal   &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
-                         &none            &none                &none  &none  &none  /**/  &none  &none                &none
+                &none  &none            &none                &none     &none       &none  /**/  &none     &none     &none   &none      &none            &none
+                &none  &kp LCTRL        &kp LGUI             &kp LALT  &kp LSHIFT  &none  /**/  &none     &none     &none   &none      &none            &none
+                &none  &scroll_to_edit  &scroll_horizontal   &none     &none       &none  /**/  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &scroll_to_edit  &none
+                       &none            &none                &none     &none       &none  /**/  &none     &none                        &none
             >;
         };
 
         horizontal_scroll_layer {
             label = "HSCROLL";
             bindings = <
-                &none    &none            &none                &none  &none  &none  /**/  &none  &none  &none  &none  &none            &none
-                &none    &scroll_to_edit  &none                &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
-                &none    &scroll_to_edit  &scroll_vertical     &none  &none  &none  /**/  &none  &none  &none  &none  &scroll_to_edit  &none
-                         &none            &none                &none  &none  &none  /**/  &none  &none                &none
+                &none  &none            &none                &none     &none       &none  /**/  &none     &none     &none   &none      &none            &none
+                &none  &kp LCTRL        &kp LGUI             &kp LALT  &kp LSHIFT  &none  /**/  &none     &none     &none   &none      &none            &none
+                &none  &scroll_to_edit  &scroll_vertical     &none     &none       &none  /**/  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &scroll_to_edit  &none
+                       &none            &none                &none     &none       &none  /**/  &none     &none                        &none
             >;
         };
 
@@ -132,6 +133,16 @@
                 &none    &none  &kp ESCAPE  &kp LS(TAB)  &kp TAB  &none    /**/  &none    &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
                 &none    &none  &kp ESCAPE  &kp LS(TAB)  &kp TAB  &none    /**/  &none    &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
                          &none  &none       &none        &none    &none    /**/  &none    &none                             &none
+            >;
+        };
+
+        switch_keys_layer {
+            label = "SWKEYS";
+            bindings = <
+                &none  &none  &sw_alt_prev  &sw_alt_next  &none  &none  /**/  &none  &none  &none         &none         &none  &none
+                &none  &none  &none         &sw_ctl_prev  &sw_ctl_next  &none  /**/  &none  &none  &none  &none  &none  &none
+                &none  &none  &none         &sw_gui_prev  &sw_gui_next  &none  /**/  &none  &none  &none         &none         &none  &none
+                       &none  &none         &none         &none         &none  /**/  &none  &none                       &none
             >;
         };
 

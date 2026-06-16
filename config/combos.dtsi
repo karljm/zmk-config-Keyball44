@@ -113,6 +113,14 @@
             layers = <0>;
         };
 
+        combo_switch_keys {
+            timeout-ms = <50>;
+            key-positions = <42 31>;
+            bindings = <&mo SWKEYS>;
+            layers = <0>;
+            slow-release;
+        };
+
         // SWITCHING
         combo_gui_prev {
             timeout-ms = <50>;
