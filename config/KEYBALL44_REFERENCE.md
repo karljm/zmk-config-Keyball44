@@ -22,14 +22,12 @@
 | 1 | NUM | Hold position 38 |
 | 2 | FUN | From NUM: position 12 or 23 |
 | 3 | EDIT | Hold position 39 or 42 |
-| 4 | MOUSE | `&to MOUSE`, combo 38 + 28 |
-| 5 | SNIPE | Hold combo 13 + 16, combo 38 + 37, or toggles from mouse layers |
-| 6 | SCROLL | Hold position 40, hold combo 14 + 16, combo 38 + 15, mouse-layer scroll key |
-| 7 | HSCROLL | Combo 38 + 26 |
-| 8 | BSCROLL | Hold scroll selector |
-| 9 | SETTING | Combo 42 + 43 |
-| 10 | SWITCH | Internal app-switching layer |
-| 11 | OPTIONS | Hold position 0 or 11 |
+| 4 | SNIPE | Toggle from EDIT |
+| 5 | VSCROLL | Hold position 40 or toggle from EDIT/SNIPE |
+| 6 | HSCROLL | Toggle from VSCROLL |
+| 7 | SETTING | Combo 42 + 43 |
+| 8 | SWITCH | Internal app-switching layer |
+| 9 | OPTIONS | Hold position 0 or 11 |
 
 ### DEFAULT Layer (QWRT)
 
@@ -57,9 +55,9 @@
 | 37 | GUI next app/tab macro |
 | 38 | Hold NUM, clears NUM/FUN on release |
 | 39 | Space / hold EDIT |
-| 40 | Hold SCROLL |
-| 42 | Hold EDIT, clears mouse/scroll toggles on release |
-| 43 | To MOUSE |
+| 40 | Hold VSCROLL |
+| 42 | Hold EDIT, clears snipe/scroll toggles on release |
+| 43 | None |
 
 ### NUM Layer
 
@@ -107,9 +105,9 @@ Positions 12 and 23 toggle FUN on. Releasing the NUM hold clears both NUM and FU
 
 `SFT`, `CTL`, `GUI`, and `ALT` are sticky modifiers.
 
-### MOUSE / SNIPE Layers
+### EDIT / SNIPE Layers
 
-MOUSE and SNIPE currently share the same key bindings. SNIPE changes trackball CPI through the PMW3610 driver.
+SNIPE mirrors EDIT, except the SNIPE toggle key turns SNIPE back off. SNIPE changes trackball CPI through the PMW3610 driver.
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
@@ -129,12 +127,11 @@ MOUSE and SNIPE currently share the same key bindings. SNIPE changes trackball C
 | MB4 / MB5 | Mouse button 4 / 5 |
 | SCR | Tap vertical scroll mode, hold both-axis scroll |
 | SNP | Toggle SNIPE on |
-| TO0 | Clear mouse/scroll/snipe layers and return to DEFAULT |
-| MOU | Stay on MOUSE |
+| TO0 | Clear snipe/scroll layers and return to DEFAULT |
 
-### SCROLL / HSCROLL / BSCROLL Layers
+### VSCROLL / HSCROLL Layers
 
-SCROLL, HSCROLL, and BSCROLL currently share the same key bindings. Trackball behavior differs by active layer.
+VSCROLL and HSCROLL are mostly empty layers with a single switch key at position 26. Trackball behavior differs by active layer.
 
 ```
 ┌───┬───┬───┬───┬───┬───┐               ┌───┬───┬───┬───┬───┬───┐
@@ -218,9 +215,7 @@ Combos with `layers = <0>` are active on DEFAULT only.
 | Bootloader L | 26 + 27 + 28 + 29 + 40 | Bootloader |
 | Bootloader R | 30 + 31 + 32 + 33 + 41 | Bootloader |
 | SETTING | 42 + 43 | Momentary SETTING |
-| MOUSE | 38 + 28 | Momentary MOUSE |
-| SCROLL hold | 14 + 16 | Momentary SCROLL |
-| SCROLL | 38 + 15 | Toggle SCROLL on |
+| VSCROLL hold | 37 + 38 | Momentary VSCROLL |
 | HSCROLL | 38 + 26 | Toggle HSCROLL on |
 | SNIPE hold | 13 + 16 | Momentary SNIPE |
 | SNIPE | 38 + 37 | Momentary SNIPE |
@@ -339,9 +334,8 @@ Right thumb symbols use position 42:
 | SNIPE CPI | 800 |
 | SNIPE divisor | 4 |
 | Scroll tick | 32 |
-| Automouse layer | MOUSE / layer 4 |
-| Scroll layers | SCROLL, HSCROLL, BSCROLL |
-| SNIPE layer | SNIPE / layer 5 |
+| Scroll layers | VSCROLL / layer 5, HSCROLL / layer 6 |
+| SNIPE layer | SNIPE / layer 4 |
 | Normal X scale | 1/1 |
 | Normal Y scale | 3/4 |
 
@@ -351,11 +345,10 @@ Scroll layer overrides zero the unused wheel axis with input processors.
 
 | Behavior | Purpose |
 |----------|---------|
-| `edit_hold_cleanup` | Holds EDIT, then clears mouse/scroll toggles on release |
+| `edit_hold_cleanup` | Holds EDIT, then clears snipe/scroll toggles on release |
 | `num_hold_cleanup` | Holds NUM, then clears FUN and NUM on release |
-| `mouse_to_default` | Clears mouse/scroll/snipe layers and returns to DEFAULT |
-| `scroll_vertical_or_both` | Tap vertical scroll, hold BSCROLL |
-| `scroll_horizontal_or_both` | Tap horizontal scroll, hold BSCROLL |
+| `scroll_vertical` | Switches from HSCROLL to VSCROLL |
+| `scroll_horizontal` | Switches from VSCROLL to HSCROLL |
 | `skq` | Sticky key with quick release |
 | `tog_on` / `tog_off` | Toggle-layer helpers forced on/off |
 
