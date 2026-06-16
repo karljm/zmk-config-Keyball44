@@ -69,12 +69,14 @@
             timeout-ms = <500>;
             key-positions = <26 27 28 29 40>;
             bindings = <&bootloader>;
+            layers = <0>;
         };
 
         combo_rboot {
             timeout-ms = <500>;
             key-positions = <30 31 32 33 41>;
             bindings = <&bootloader>;
+            layers = <0>;
         };
 
         combo_rgui {

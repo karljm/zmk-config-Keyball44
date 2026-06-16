@@ -7,8 +7,8 @@
 #define VSCROLL 6
 #define HSCROLL 7
 #define SETTING 8
-#define SWITCH  9
-#define SWKEYS  10
+#define SWKEYS  9
+#define SWITCH  10
 #define OPTIONS 11
 
 #include <behaviors/mouse_keys.dtsi>
@@ -126,16 +126,6 @@
             >;
         };
 
-        switch_layer {
-            label = "SWITCH";
-            bindings = <
-                &none    &none  &none       &none        &none    &none    /**/  &none    &none    &none        &none       &none  &none
-                &none    &none  &kp ESCAPE  &kp LS(TAB)  &kp TAB  &none    /**/  &none    &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
-                &none    &none  &kp ESCAPE  &kp LS(TAB)  &kp TAB  &none    /**/  &none    &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
-                         &none  &none       &none        &none    &none    /**/  &none    &none                             &none
-            >;
-        };
-
         switch_keys_layer {
             label = "SWKEYS";
             bindings = <
@@ -143,6 +133,16 @@
                 &none  &none  &none         &sw_ctl_prev  &sw_ctl_next  &none  /**/  &none  &none  &none  &none  &none  &none
                 &none  &none  &none         &sw_gui_prev  &sw_gui_next  &none  /**/  &none  &none  &none         &none         &none  &none
                        &none  &none         &none         &none         &none  /**/  &none  &none                       &none
+            >;
+        };
+
+        switch_layer {
+            label = "SWITCH";
+            bindings = <
+                &none    &none  &none       &none        &none    &none    /**/  &none    &none    &none        &none       &none  &none
+                &none    &none  &kp ESCAPE  &kp LS(TAB)  &kp TAB  &none    /**/  &none    &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
+                &none    &none  &kp ESCAPE  &kp LS(TAB)  &kp TAB  &none    /**/  &none    &kp TAB  &kp LS(TAB)  &kp ESCAPE  &none  &none
+                         &none  &none       &none        &none    &none    /**/  &none    &none                             &none
             >;
         };
 
