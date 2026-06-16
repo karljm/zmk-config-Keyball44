@@ -65,20 +65,6 @@
             slow-release;
         };
 
-        combo_lboot {
-            timeout-ms = <500>;
-            key-positions = <26 27 28 29 40>;
-            bindings = <&bootloader>;
-            layers = <0>;
-        };
-
-        combo_rboot {
-            timeout-ms = <500>;
-            key-positions = <30 31 32 33 41>;
-            bindings = <&bootloader>;
-            layers = <0>;
-        };
-
         combo_rgui {
             timeout-ms = <50>;
             key-positions = <42 21>;
@@ -118,7 +104,7 @@
         combo_switch_keys {
             timeout-ms = <50>;
             key-positions = <42 31>;
-            bindings = <&mo SWKEYS>;
+            bindings = <&swkeys_hold>;
             layers = <0>;
             slow-release;
         };

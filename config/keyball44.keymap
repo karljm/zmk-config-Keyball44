@@ -129,10 +129,10 @@
         switch_keys_layer {
             label = "SWKEYS";
             bindings = <
-                &none  &none  &sw_alt_prev  &sw_alt_next  &none  &none  /**/  &none  &none  &none         &none         &none  &none
-                &none  &none  &none         &sw_ctl_prev  &sw_ctl_next  &none  /**/  &none  &none  &none  &none  &none  &none
-                &none  &none  &none         &sw_gui_prev  &sw_gui_next  &none  /**/  &none  &none  &none         &none         &none  &none
-                       &none  &none         &none         &none         &none  /**/  &none  &none                       &none
+                &none  &none  &swkey_alt_prev  &swkey_alt_next  &none  &none  /**/  &none  &none  &none  &none  &none  &none
+                &none  &none  &none            &swkey_ctl_prev  &swkey_ctl_next  &none  /**/  &none  &none  &none  &none  &none  &none
+                &none  &none  &none            &swkey_gui_prev  &swkey_gui_next  &none  /**/  &none  &none  &none  &none  &none  &none
+                       &none  &none            &none            &none            &none  /**/  &none  &none                &none
             >;
         };
 
