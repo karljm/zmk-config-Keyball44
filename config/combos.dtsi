@@ -17,7 +17,7 @@
         combo_hold_scroll {
             timeout-ms = <25>;
             key-positions = <37 38>;
-            bindings = <&mo SCROLL>;
+            bindings = <&mo VSCROLL>;
             layers = <0>;
         };
 
@@ -113,54 +113,6 @@
             layers = <0>;
         };
 
-        combo_mouse {
-            timeout-ms = <50>;
-            key-positions = <38 28>;
-            bindings = <&mo MOUSE>;
-            layers = <0>;
-            slow-release;
-        };
-
-        combo_scroll_hold {
-            timeout-ms = <50>;
-            key-positions = <14 16>;
-            bindings = <&mo SCROLL>;
-            layers = <0>;
-            slow-release;
-        };
-
-        combo_scroll {
-            timeout-ms = <50>;
-            key-positions = <38 15>;
-            bindings = <&tog_on SCROLL>;
-            layers = <0>;
-            slow-release;
-        };
-
-        combo_hscroll {
-            timeout-ms = <50>;
-            key-positions = <38 26>;
-            bindings = <&tog_on HSCROLL>;
-            layers = <0>;
-            slow-release;
-        };
-
-        combo_snipe_hold {
-            timeout-ms = <50>;
-            key-positions = <13 16>;
-            bindings = <&mo SNIPE>;
-            layers = <0>;
-            slow-release;
-        };
-
-        combo_snipe {
-            timeout-ms = <50>;
-            key-positions = <38 37>;
-            bindings = <&mo SNIPE>;
-            layers = <0>;
-            slow-release;
-        };
-
         // SWITCHING
         combo_gui_prev {
             timeout-ms = <50>;
@@ -211,7 +163,7 @@
         };
 
         combo_alt_next_both {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <32 28>;
             bindings = <&sw_alt_next>;
             layers = <0>;
@@ -219,7 +171,7 @@
         };
 
         combo_alt_prev_both {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <32 27>;
             bindings = <&sw_alt_prev>;
             layers = <0>;
@@ -227,7 +179,7 @@
         };
         
         combo_ctl_next_both {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <31 28>;
             bindings = <&sw_ctl_next>;
             layers = <0>;
@@ -235,7 +187,7 @@
         };
         
         combo_ctl_prev_both {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <31 27>;
             bindings = <&sw_ctl_prev>;
             layers = <0>;
@@ -244,7 +196,7 @@
 
 
         combo_gui_next_both {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <33 28>;
             bindings = <&sw_gui_next>;
             layers = <0>;
@@ -253,7 +205,7 @@
 
 
         combo_gui_prev_both {
-            timeout-ms = <25>;
+            timeout-ms = <35>;
             key-positions = <33 27>;
             bindings = <&sw_gui_prev>;
             layers = <0>;

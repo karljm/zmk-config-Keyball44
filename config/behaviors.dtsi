@@ -90,7 +90,7 @@
             bindings
                 = <&macro_press &mo EDIT>
                 , <&macro_pause_for_release>
-                , <&macro_tap &tog_off BSCROLL &tog_off SNIPE &tog_off HSCROLL &tog_off SCROLL &tog_off MOUSE>
+                , <&macro_tap &tog_off BSCROLL &tog_off SNIPE &tog_off HSCROLL &tog_off VSCROLL &tog_off MOUSE>
                 , <&macro_release &mo EDIT>
                 ;
         };
@@ -110,7 +110,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &tog_off BSCROLL &tog_off SNIPE &tog_off HSCROLL &tog_off SCROLL &tog_off MOUSE &to DEFAULT>
+                = <&macro_tap &tog_off BSCROLL &tog_off SNIPE &tog_off HSCROLL &tog_off VSCROLL &tog_off MOUSE &to DEFAULT>
                 ;
         };
 
@@ -118,10 +118,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &mo SCROLL>
+                = <&macro_press &mo VSCROLL>
                 , <&macro_pause_for_release>
                 , <&macro_tap &tog_off HSCROLL>
-                , <&macro_release &mo SCROLL>
+                , <&macro_release &mo VSCROLL>
                 ;
         };
 
@@ -129,7 +129,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &tog_off HSCROLL &tog_on SCROLL>
+                = <&macro_tap &tog_off HSCROLL &tog_on VSCROLL>
                 ;
         };
 
@@ -137,7 +137,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &tog_off SCROLL &tog_on HSCROLL>
+                = <&macro_tap &tog_off VSCROLL &tog_on HSCROLL>
                 ;
         };
 
